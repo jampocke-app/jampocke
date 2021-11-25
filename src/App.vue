@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <PostTweet></PostTweet>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,14 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import PostTweet from "@src/components/PostTweet.vue"
+
+export default defineComponent({
+  setup() {},
+})
+</script>
 
 <style>
 #app {
