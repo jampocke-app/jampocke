@@ -2,7 +2,7 @@
   <div id="app">
     <!-- 投稿画面 -->
     <div class="post__form">
-      <div>投稿内容</div>
+      <div class="post__title">投稿内容</div>
       <div class="post__text">
         <textarea
           class="post__textarea"
@@ -17,9 +17,9 @@
     </div>
 
     <!-- 過去の投稿を閲覧する画面 -->
-    <div>
-      <div>過去の投稿</div>
-      <div class="check__contents" v-for="tweet in tweets" :key="tweet.id">
+    <div class="check__content">
+      <div class="check__title">過去の投稿</div>
+      <div class="check__card" v-for="tweet in tweets" :key="tweet.id">
         <div>{{ tweet.text }}</div>
       </div>
     </div>
@@ -75,4 +75,30 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+body {
+  background-color: #fdb86d;
+}
+.post__form {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px;
+}
+.post__title {
+  padding: 20px;
+  background-color: #ddeeff;
+}
+.check__title {
+  padding: 20px;
+  background-color: #ffdddd;
+}
+.check__card {
+  border-radius: 10px;
+  background-color: #fff8dc;
+  margin: 5px;
+}
+.check__content {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+</style>
