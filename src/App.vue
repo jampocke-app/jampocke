@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <PostTweet></PostTweet>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <PostTweet />
   </div>
 </template>
 
 <script>
-import PostTweet from "@src/components/PostTweet.vue"
+import PostTweet from "@/components/PostTweet.vue"
 
-export default defineComponent({
-  setup() {},
-})
+export default {
+  components: {
+    PostTweet,
+  },
+  data() {
+    return {}
+  },
+}
 </script>
 
 <style>
