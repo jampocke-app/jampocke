@@ -26,7 +26,7 @@
       </select>
     </div>
     <div class="tyubu">
-      <select name="kanto">
+      <select name="tyubu">
         <option selected disabled>中部</option>
         <option value="8">新潟県</option>
         <option value="9">富山県</option>
@@ -35,6 +35,31 @@
         <option value="12">山梨県</option>
         <option value="13">岐阜都</option>
         <option value="14">静岡県</option>
+        <option value="14">愛知県</option>
+      </select>
+    </div>
+    <div class="kinki">
+      <select name="kinki">
+        <option selected disabled>近畿</option>
+        <option value="8">三重県</option>
+        <option value="9">滋賀県</option>
+        <option value="10">京都府</option>
+        <option value="11">大阪府</option>
+        <option value="12">兵庫県</option>
+        <option value="13">奈良県</option>
+        <option value="14">和歌山県</option>
+      </select>
+    </div>
+    <div class="tyugoku">
+      <select name="tyugoku">
+        <option selected disabled>中国</option>
+        <option value="8">三重県</option>
+        <option value="9">滋賀県</option>
+        <option value="10">京都府</option>
+        <option value="11">大阪府</option>
+        <option value="12">兵庫県</option>
+        <option value="13">奈良県</option>
+        <option value="14">和歌山県</option>
       </select>
     </div>
   </div>
@@ -160,6 +185,36 @@ option[selected][disabled] {
   position: absolute;
   top: 58%;
   right: 35%;
+  width: 10%;
+}
+.tyubu{
+  position: absolute;
+  top: 62%;
+  right: 45%;
+  width: 10%;
+}
+.tyubu{
+  position: absolute;
+  top: 62%;
+  right: 45%;
+  width: 10%;
+}
+.tyubu{
+  position: absolute;
+  top: 62%;
+  right: 45%;
+  width: 10%;
+}
+.tyubu{
+  position: absolute;
+  top: 62%;
+  right: 45%;
+  width: 10%;
+}
+.tyubu{
+  position: absolute;
+  top: 62%;
+  right: 45%;
   width: 10%;
 }
 /* .japan_map {
