@@ -1,45 +1,6 @@
 <template>
   <div class="japan_map">
     <img alt="japan" src="../assets/jap.png" />
-    <div class="tohoku">
-      <select name="tohoku">
-        <option selected disabled>北海道・東北</option>
-        <option value="/.html">北海道</option>
-        <option value="2">青森県</option>
-        <option value="3">岩手県</option>
-        <option value="4">宮城県</option>
-        <option value="5">秋田県</option>
-        <option value="6">山形県</option>
-        <option value="7">福島県</option>
-      </select>
-    </div>
-    <div class="kanto">
-      <select name="kanto">
-        <option selected disabled>関東</option>
-        <option value="8">茨城県</option>
-        <option value="9">栃木県</option>
-        <option value="10">群馬県</option>
-        <option value="11">埼玉県</option>
-        <option value="12">千葉県</option>
-        <option value="13">東京都</option>
-        <option value="14">神奈川県</option>
-      </select>
-    </div>
-    <div class="tyubu">
-      <select name="kanto">
-        <option selected disabled>中部</option>
-        <option value="8">新潟県</option>
-        <option value="9">富山県</option>
-        <option value="10">石川県</option>
-        <option value="11">福井県</option>
-        <option value="12">山梨県</option>
-        <option value="13">岐阜都</option>
-        <option value="14">静岡県</option>
-      </select>
-    </div>
-  </div>
-  <!-- <div class="japan_map">
-    <img alt="japan" src="../assets/jap.png" />
     <span class="area_btn area1" data-area="1">北海道・東北</span>
     <span class="area_btn area2" data-area="2">関東</span>
     <span class="area_btn area3" data-area="3">中部</span>
@@ -118,31 +79,12 @@
         <div data-id="47">沖縄県</div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script></script>
 
 <style scoped>
-select {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  border-radius: 5px;
-  color: #333;
-  font-size: 16px;
-  padding: 0 10px;
-  height: 40px;
-  width: 120px;
-  position: relative;
-  background: hsl(30, 30%, 89%);
-}
-
-option[selected][disabled] {
-  display: none;
-}
-
 .japan_map {
   position: relative;
   box-sizing: border-box;
@@ -150,26 +92,7 @@ option[selected][disabled] {
   display: table;
   width: 20%;
 }
-.tohoku {
-  position: absolute;
-  top: 30%;
-  right: 25%;
-  width: 20%;
-}
-.kanto {
-  position: absolute;
-  top: 58%;
-  right: 35%;
-  width: 10%;
-}
-/* .japan_map {
-  position: relative;
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: table;
-  width: 20%;
-}
-
+/* 日本地図ボタン */
 .japan_map .area_btn {
   position: absolute;
   z-index: 1;
@@ -216,7 +139,33 @@ option[selected][disabled] {
 }
 
 /* 選択前は表示を隠す */
-/* .japan_map .pref_area {
+.japan_map .pref_area {
   display: none;
-} */
+}
+
+/* 地域毎の都道府県リスト */
+.japan_map .pref_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 3;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #fff;
+}
+.japan_map .pref_list > div {
+  box-sizing: border-box;
+  width: 50%;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em;
+  cursor: pointer;
+}
 </style>
