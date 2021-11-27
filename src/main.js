@@ -1,5 +1,5 @@
 import Vue from "vue"
-import App from "./App.vue"
+import App from "./components/App.vue"
 import "./firebase.js" // これを追加
 import router from "./router"
 
