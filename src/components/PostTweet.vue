@@ -48,20 +48,26 @@ export default {
       firebase
         .firestore()
         .collection("tweets")
-        .doc(moment)
-        .set({ text: this.InputValue })
-        .then(() => {
+        // .doc(moment())
+        .add({
+          text: this.InputValue,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        })
+        .then((ref) => {
           this.tweets.unshift({
-            id: moment,
+            id: ref.id,
             text: this.InputValue,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
           })
         })
+      //   console.log(moment())
     },
   },
   created() {
     firebase
       .firestore()
       .collection("tweets")
+      .orderBy("createdAt", "desc")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
