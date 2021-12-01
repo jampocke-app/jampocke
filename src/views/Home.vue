@@ -28,11 +28,11 @@
 
       <select v-model="prefecture">
         <option value="0" disabled>北海道・東北</option>
-        <option value="11">東京</option>
-        <option value="12">神奈川</option>
-        <option value="13">埼玉</option>
-        <option value="14">千葉</option>
-        <option value="15">栃木</option>
+        <option value="11">北海道</option>
+        <option value="12">青森</option>
+        <option value="13">秋田</option>
+        <option value="14">岩手</option>
+        <option value="15">宮城</option>
         <option value="16">茨城</option>
         <option value="17">群馬</option>
       </select>
