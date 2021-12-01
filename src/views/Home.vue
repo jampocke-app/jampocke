@@ -1,12 +1,13 @@
 <template>
   <div class="home">
+    <h1>投稿画面</h1>
     <div>
       <h5>ユーザーネーム</h5>
-      <input type="text" class="UserName" v-mosel="UesrName" />
+      <input type="text" class="UserName" v-model="UserName" />
     </div>
     <div>
       <h5>年齢</h5>
-      <input type="number" class="old" />
+      <input type="number" class="old" v-model="old" />
     </div>
     <div>
       <h5>方言</h5>
@@ -14,7 +15,7 @@
     </div>
     <div>
       <h5>都道府県選択</h5>
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>関東</option>
         <option value="1">東京</option>
         <option value="2">神奈川</option>
@@ -25,7 +26,7 @@
         <option value="7">群馬</option>
       </select>
 
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>北海道・東北</option>
         <option value="11">東京</option>
         <option value="12">神奈川</option>
@@ -36,7 +37,7 @@
         <option value="17">群馬</option>
       </select>
 
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>中部</option>
         <option value="21">東京</option>
         <option value="22">神奈川</option>
@@ -47,7 +48,7 @@
         <option value="27">群馬</option>
       </select>
 
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>近畿</option>
         <option value="31">東京</option>
         <option value="32">神奈川</option>
@@ -58,7 +59,7 @@
         <option value="37">群馬</option>
       </select>
 
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>中国・四国</option>
         <option value="41">東京</option>
         <option value="42">神奈川</option>
@@ -69,7 +70,7 @@
         <option value="47">群馬</option>
       </select>
 
-      <select v-model="nandemo">
+      <select v-model="prefecture">
         <option value="0" disabled>九州</option>
         <option value="51">東京</option>
         <option value="52">神奈川</option>
@@ -87,7 +88,7 @@
         class="episode"
         cols="30"
         rows="10"
-        v-model="episodo"
+        v-model="episode"
       ></textarea>
     </div>
     <div>
@@ -99,20 +100,44 @@
         v-model="thoughts"
       ></textarea>
     </div>
-    <input type="submit" class="submit" />
+    <input type="submit" class="submit" v-on:click="submit" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import firebase from "firebase"
 
 export default {
   name: "Home",
 
   data() {
     return {
-      nandemo: 0,
+      prefecture: 0,
+      UserName: "",
+      old: "",
+      slang: "",
+      episode: "",
+      thoughts: "",
     }
+  },
+  methods: {
+    submit() {
+      firebase
+        .firestore()
+        .collection("tweets")
+        // .doc(moment())
+        .add({
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          UserName: this.UserName,
+          old: this.old,
+          slang: this.slang,
+          prefecture: this.prefecture,
+          episode: this.episode,
+          thoughts: this.thoughts,
+        })
+      //   console.log(moment())
+    },
   },
 }
 </script>
