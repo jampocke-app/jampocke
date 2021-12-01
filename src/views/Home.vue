@@ -1,84 +1,83 @@
 <template>
   <div class="japan_map">
     <Header />
-    <img alt="japan" src="../assets/jap.png" />
-    <span class="area_btn area1" data-area="1">北海道・東北</span>
-    <span class="area_btn area2" data-area="2">関東</span>
-    <span class="area_btn area3" data-area="3">中部</span>
-    <span class="area_btn area4" data-area="4">近畿</span>
-    <span class="area_btn area5" data-area="5">中国・四国</span>
-    <span class="area_btn area6" data-area="6">九州・沖縄</span>
-
-    <div class="pref_area">
-      <div class="pref_list" data-list="1">
-        <div data-id="1">北海道</div>
-        <div data-id="2">青森県</div>
-        <div data-id="3">岩手県</div>
-        <div data-id="4">宮城県</div>
-        <div data-id="5">秋田県</div>
-        <div data-id="6">山形県</div>
-        <div data-id="7">福島県</div>
-        <div></div>
-      </div>
-
-      <div class="pref_list" data-list="2">
-        <div data-id="8">茨城県</div>
-        <div data-id="9">栃木県</div>
-        <div data-id="10">群馬県</div>
-        <div data-id="11">埼玉県</div>
-        <div data-id="12">千葉県</div>
-        <div data-id="13">東京都</div>
-        <div data-id="14">神奈川県</div>
-        <div></div>
-      </div>
-
-      <div class="pref_list" data-list="3">
-        <div data-id="15">新潟県</div>
-        <div data-id="16">富山県</div>
-        <div data-id="17">石川県</div>
-        <div data-id="18">福井県</div>
-        <div data-id="19">山梨県</div>
-        <div data-id="20">長野県</div>
-        <div data-id="21">岐阜県</div>
-        <div data-id="22">静岡県</div>
-        <div data-id="23">愛知県</div>
-        <div></div>
-      </div>
-
-      <div class="pref_list" data-list="4">
-        <div data-id="24">三重県</div>
-        <div data-id="25">滋賀県</div>
-        <div data-id="26">京都府</div>
-        <div data-id="27">大阪府</div>
-        <div data-id="28">兵庫県</div>
-        <div data-id="29">奈良県</div>
-        <div data-id="30">和歌山県</div>
-        <div></div>
-      </div>
-
-      <div class="pref_list" data-list="5">
-        <div data-id="31">鳥取県</div>
-        <div data-id="32">島根県</div>
-        <div data-id="33">岡山県</div>
-        <div data-id="34">広島県</div>
-        <div data-id="35">山口県</div>
-        <div data-id="36">徳島県</div>
-        <div data-id="37">香川県</div>
-        <div data-id="38">愛媛県</div>
-        <div data-id="39">高知県</div>
-        <div></div>
-      </div>
-
-      <div class="pref_list" data-list="6">
-        <div data-id="40">福岡県</div>
-        <div data-id="41">佐賀県</div>
-        <div data-id="42">長崎県</div>
-        <div data-id="43">熊本県</div>
-        <div data-id="44">大分県</div>
-        <div data-id="45">宮崎県</div>
-        <div data-id="46">鹿児島県</div>
-        <div data-id="47">沖縄県</div>
-      </div>
+    <!-- <tr>
+      <th scope="col">北海道</th>
+      <th scope="col">東北</th>
+      <th scope="col">関東</th>
+    </tr> -->
+    <div class="japan_graph">
+      <tr>
+        <th scope="row">北海道</th>
+        <td>北海道</td>
+      </tr>
+      <tr>
+        <th scope="row">東北地方</th>
+        <td>青森県</td>
+        <td>岩手県</td>
+        <td>宮城県</td>
+        <td>秋田県</td>
+        <td>山形県</td>
+        <td>福島県</td>
+      </tr>
+      <tr>
+        <th scope="row">関東地方</th>
+        <td>茨城県</td>
+        <td>栃木県</td>
+        <td>群馬県</td>
+        <td>埼玉県</td>
+        <td>千葉県</td>
+        <td>東京都</td>
+        <td>神奈川県</td>
+      </tr>
+      <tr>
+        <th scope="row">中部地方</th>
+        <td>新潟県</td>
+        <td>富山県</td>
+        <td>石川県</td>
+        <td>福井県</td>
+        <td>山梨県</td>
+        <td>長野県</td>
+        <td>岐阜都</td>
+        <td>静岡県</td>
+        <td>愛知県</td>
+      </tr>
+      <tr>
+        <th scope="row">近畿地方</th>
+        <td>三重県</td>
+        <td>滋賀県</td>
+        <td>京都府</td>
+        <td>大阪府</td>
+        <td>兵庫県</td>
+        <td>奈良県</td>
+        <td>和歌山県</td>
+      </tr>
+      <tr>
+        <th scope="row">中国地方</th>
+        <td>鳥取県</td>
+        <td>島根県</td>
+        <td>岡山県</td>
+        <td>広島県</td>
+        <td>山口県</td>
+      </tr>
+      <tr>
+        <th scope="row">四国地方</th>
+        <td>徳島県</td>
+        <td>香川県</td>
+        <td>愛媛県</td>
+        <td>高知県</td>
+      </tr>
+      <tr>
+        <th scope="row">九州地方</th>
+        <td>福岡県</td>
+        <td>佐賀県</td>
+        <td>長崎県</td>
+        <td>熊本県</td>
+        <td>大分県</td>
+        <td>宮崎県</td>
+        <td>長崎県</td>
+        <td>沖縄県</td>
+      </tr>
     </div>
   </div>
 </template>
@@ -96,61 +95,37 @@ export default {
 
 <style scoped>
 .japan_map {
-  position: relative;
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: table;
-  width: 20%;
-  top: 100px;
+  width: 100%;
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-image: url("../assets/jap.png");
 }
 
-.japan_map .area_btn {
-  position: absolute;
-  z-index: 1;
-  box-sizing: border-box;
-  cursor: pointer;
-  border: 3px solid #000000;
-  border-radius: 5px;
-  background-color: #fff;
-  padding: 0.2em auto;
+.japan_graph {
+  padding: 130px 200px;
+}
+
+td,
+th {
+  border: 1px solid rgb(179, 167, 167);
+  width: 280px;
+  padding: 15px;
   font-weight: bold;
-  text-align: center;
-  white-space: nowrap;
 }
 
-.japan_map .area_btn.area1 {
-  top: 30%;
-  right: 25%;
-  width: 20%;
-}
-.japan_map .area_btn.area2 {
-  top: 58%;
-  right: 35%;
-  width: 10%;
-}
-.japan_map .area_btn.area3 {
-  top: 62%;
-  right: 45%;
-  width: 10%;
-}
-.japan_map .area_btn.area4 {
-  top: 70%;
-  right: 54%;
-  width: 10%;
-}
-.japan_map .area_btn.area5 {
-  top: 60%;
-  left: 16%;
-  width: 20%;
-}
-.japan_map .area_btn.area6 {
-  top: 80%;
-  right: 72%;
-  width: 20%;
+td {
+  width: 350px;
+  /* padding: 20px; */
+  vertical-align: top;
 }
 
-/* 選択前は表示を隠す */
-.japan_map .pref_area {
-  display: none;
+th[scope="col"] {
+  background-color: #696969;
+  color: #fff;
+}
+
+th[scope="row"] {
+  background-color: #d7d9f2;
 }
 </style>

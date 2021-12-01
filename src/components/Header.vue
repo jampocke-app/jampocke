@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>方言アプリ</h1>
+    <h1><a href="/">方言アプリ</a></h1>
     <nav class="gnav">
       <ul class="menu">
         <li><a href="">マイページ</a></li>
@@ -117,6 +117,7 @@ h1 {
 }
 
 .header {
+  font-weight: bold;
   width: 100%; /* 幅いっぱいを指定 */
   height: 50px; /* 高さを50pxに指定 */
   background: #ccc; /* 背景色にグレーを指定 */
@@ -142,6 +143,7 @@ h1 {
 }
 
 .header2 {
+  font-weight: bold;
   width: 100%; /* 幅いっぱいを指定 */
   height: 50px; /* 高さを50pxに指定 */
   background: rgb(231, 204, 204); /* 背景色にグレーを指定 */
