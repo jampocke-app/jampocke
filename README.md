@@ -1,5 +1,9 @@
 # janpocke-app
+<<<<<<< HEAD
+app
+=======
 aaaaaa
+>>>>>>> origin/random
 ## Project setup
 ```
 npm install
