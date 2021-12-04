@@ -21,17 +21,17 @@
       <div class="hokkai">
         <select v-model="selected" v-on:change="gotopage">
           <option value="" disabled selected>北海道</option>
-          <option selected value="Hokkaidou">北海道</option>
+          <option selected value="北海道">北海道</option>
         </select>
       </div>
       <div class="tohoku">
         <select v-model="selected" v-on:change="gotopage">
           <option value="" disabled selected>東北地方</option>
-          <option selected value="Aomori">青森県</option>
-          <option selected value="Iwate">岩手県</option>
-          <option selected value="Miyagi">宮城県</option>
-          <option selected value="Akita">秋田県</option>
-          <option selected value="Yamagata">山形県</option>
+          <option selected value="青森">青森県</option>
+          <option selected value="岩手県">岩手県</option>
+          <option selected value="宮城県">宮城県</option>
+          <option selected value="秋田県">秋田県</option>
+          <option selected value="山形県">山形県</option>
           <option selected value="Hukusima">福島県</option>
         </select>
       </div>

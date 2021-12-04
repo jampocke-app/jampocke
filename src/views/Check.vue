@@ -2,22 +2,6 @@
   <div class="about">
     <h1>閲覧画面</h1>
     <div id="app">
-      <!-- 投稿画面 -->
-      <!-- <div class="post__form">
-        <div class="post__title">投稿内容</div>
-        <div class="post__text">
-          <textarea
-            class="post__textarea"
-            cols="30"
-            rows="10"
-            v-model="InputValue"
-          ></textarea>
-        </div>
-        <div class="post__button">
-          <button v-on:click="PostTweet">投稿</button>
-        </div>
-      </div> -->
-
       <!-- 過去の投稿を閲覧する画面 -->
       <div class="check__container">
         <div class="check__title">過去の投稿</div>
@@ -60,29 +44,9 @@ export default {
     return {
       InputValue: "",
       tweets: [],
-      //   date: moment().format("YYYYMMDDhhmmss"),
     }
   },
-  // methods: {
-  //   PostTweet() {
-  //     firebase
-  //       .firestore()
-  //       .collection("tweets")
-  //       // .doc(moment())
-  //       .add({
-  //         text: this.InputValue,
-  //         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  //       })
-  //       .then((ref) => {
-  //         this.tweets.unshift({
-  //           id: ref.id,
-  //           text: this.InputValue,
-  //           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-  //         })
-  //       })
-  //     //   console.log(moment())
-  //   },
-  // },
+
   created() {
     firebase
       .firestore()
@@ -117,15 +81,7 @@ export default {
 body {
   background-color: #fdb86d;
 }
-/* .post__form {
-  border: 3px solid black;
-  border-radius: 10px;
-  margin: 10px;
-}
-.post__title {
-  padding: 20px;
-  background-color: #ddeeff;
-} */
+
 .check__container {
   border: 3px solid black;
   border-radius: 10px;

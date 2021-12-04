@@ -5,7 +5,7 @@
       <tr>
         <div class="retu">
           <th scope="row">北海道</th>
-          <router-link to="/Show/Hokkaidou" v-on:click.native="Hokkaidou"
+          <router-link to="/Show/北海道" v-on:click.native="北海道;"
             ><td>北海道</td></router-link
           >
         </div>
@@ -13,7 +13,7 @@
       <tr>
         <div class="retu">
           <th scope="row">東北地方</th>
-          <router-link to="/Show/Aomori" v-on:click.native="Aomori"
+          <router-link to="/Show/青森" v-on:click.native="青森県;"
             ><td>青森県</td></router-link
           >
           <router-link to="/Show/Iwate" v-on:click.native="Iwate"
