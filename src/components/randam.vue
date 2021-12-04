@@ -102,7 +102,7 @@ export default {
 }
 
 .over {
-  background-image: url("~@/components/ガチャ.jpg");
+  background-image: url("~@/assets/ガチャ.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
