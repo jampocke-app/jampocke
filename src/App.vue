@@ -31,7 +31,7 @@ export default {
         .collection("comments")
         .add(comment)
         .then((ref) => {
-          this.tweets.push({
+          this.comments.push({
             id: ref.id,
             ...comment,
           })
