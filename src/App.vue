@@ -1,56 +1,26 @@
 <template>
-  <div class="app">
-    <button v-on:click="addComment">コメント</button>
-    <div>
-      <input type="text" v-model="inputComment" />
-
-      <p v-for="comment in comments" :key="comment.id">
-        {{ comment.text }}
-      </p>
+  <div id="app">
+    <div class="hello-wrold">
+      <div class="hello-wrold__message">
+        {{ message }}
+      </div>
     </div>
+    <Comment />
   </div>
 </template>
 
 <script>
-import firebase from "firebase"
-
+import Comment from "@/components/Comment.vue"
 export default {
-  data() {
+  name: "App",
+  components: {
+    Comment,
+  },
+  data: function () {
     return {
-      inputComment: "",
-      comments: [],
+      message: "コメント投稿＆一覧画面",
     }
   },
-  methods: {
-    addComment() {
-      const comment = {
-        text: this.inputComment,
-      }
-      firebase
-        .firestore()
-        .collection("comments")
-        .add(comment)
-        .then((ref) => {
-          this.comments.push({
-            id: ref.id,
-            ...comment,
-          })
-        })
-    },
-  },
-  created() {
-    firebase
-      .firestore()
-      .collection("comments")
-      .get()
-      .then((snapshot) => {
-        snapshot.docs.forEach((doc) => {
-          this.comments.push({
-            id: doc.id,
-            ...doc.data(),
-          })
-        })
-      })
-  },
+  methods: {},
 }
 </script>
