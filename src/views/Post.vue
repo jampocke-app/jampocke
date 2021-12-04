@@ -131,7 +131,7 @@ export default {
     submit() {
       firebase
         .firestore()
-        .collection(this.prefecture)
+        .collection("tweets")
         // .doc(moment())
         .add({
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),

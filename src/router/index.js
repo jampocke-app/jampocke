@@ -2,7 +2,6 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Post from "../views/Post.vue"
 import Check from "../views/Check.vue"
-import Confirm from "../views/Confirm.vue"
 
 Vue.use(VueRouter)
 
@@ -25,11 +24,6 @@ const routes = [
     path: "/check",
     name: "Check",
     component: Check,
-  },
-  {
-    path: "/confirm/:id",
-    name: "Confirm",
-    component: Confirm,
   },
 ]
 

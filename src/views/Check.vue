@@ -21,7 +21,7 @@
       <!-- 過去の投稿を閲覧する画面 -->
       <div class="check__container">
         <div class="check__title">過去の投稿</div>
-        <div class="check__content" v-for="tweet in tweets" :key="tweet.id">
+        <div class="check__content" v-for="tweet in resultKey" :key="tweet.id">
           <div class="check__card">
             <p>ユーザーネーム</p>
             <div>{{ tweet.UserName }}</div>
@@ -102,6 +102,13 @@ export default {
           })
         })
       })
+  },
+  computed: {
+    resultKey() {
+      return this.tweets.filter((tweet) => {
+        return tweet.prefecture === "北海道"
+      })
+    },
   },
 }
 </script>
