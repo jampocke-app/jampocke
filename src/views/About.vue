@@ -63,26 +63,26 @@ export default {
       //   date: moment().format("YYYYMMDDhhmmss"),
     }
   },
-  methods: {
-    PostTweet() {
-      firebase
-        .firestore()
-        .collection("tweets")
-        // .doc(moment())
-        .add({
-          text: this.InputValue,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        })
-        .then((ref) => {
-          this.tweets.unshift({
-            id: ref.id,
-            text: this.InputValue,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          })
-        })
-      //   console.log(moment())
-    },
-  },
+  // methods: {
+  //   PostTweet() {
+  //     firebase
+  //       .firestore()
+  //       .collection("tweets")
+  //       // .doc(moment())
+  //       .add({
+  //         text: this.InputValue,
+  //         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  //       })
+  //       .then((ref) => {
+  //         this.tweets.unshift({
+  //           id: ref.id,
+  //           text: this.InputValue,
+  //           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  //         })
+  //       })
+  //     //   console.log(moment())
+  //   },
+  // },
   created() {
     firebase
       .firestore()
