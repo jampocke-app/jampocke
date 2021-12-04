@@ -17,68 +17,74 @@
       <h5>都道府県選択</h5>
       <select v-model="prefecture">
         <option value="0" disabled>関東</option>
-        <option value="1">東京</option>
-        <option value="2">神奈川</option>
-        <option value="3">埼玉</option>
-        <option value="4">千葉</option>
-        <option value="5">栃木</option>
-        <option value="6">茨城</option>
-        <option value="7">群馬</option>
+        <option value="東京">東京</option>
+        <option value="神奈川">神奈川</option>
+        <option value="埼玉">埼玉</option>
+        <option value="千葉">千葉</option>
+        <option value="栃木">栃木</option>
+        <option value="茨城">茨城</option>
+        <option value="群馬">群馬</option>
       </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>北海道・東北</option>
-        <option value="11">北海道</option>
-        <option value="12">青森</option>
-        <option value="13">秋田</option>
-        <option value="14">岩手</option>
-        <option value="15">宮城</option>
-        <option value="16">茨城</option>
-        <option value="17">群馬</option>
+        <option value="北海道">北海道</option>
+        <option value="青森">青森</option>
+        <option value="秋田">秋田</option>
+        <option value="岩手">岩手</option>
+        <option value="宮城">宮城</option>
+        <option value="山形">山形</option>
+        <option value="福島">福島</option>
       </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>中部</option>
-        <option value="21">東京</option>
-        <option value="22">神奈川</option>
-        <option value="23">埼玉</option>
-        <option value="24">千葉</option>
-        <option value="25">栃木</option>
-        <option value="26">茨城</option>
-        <option value="27">群馬</option>
+        <option value="新潟">新潟</option>
+        <option value="富山">富山</option>
+        <option value="長野">長野</option>
+        <option value="石川">石川</option>
+        <option value="静岡">静岡</option>
+        <option value="山梨">山梨</option>
+        <option value="愛知">愛知</option>
+        <option value="岐阜">岐阜</option>
+        <option value="福井">福井</option>
       </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>近畿</option>
-        <option value="31">東京</option>
-        <option value="32">神奈川</option>
-        <option value="33">埼玉</option>
-        <option value="34">千葉</option>
-        <option value="35">栃木</option>
-        <option value="36">茨城</option>
-        <option value="37">群馬</option>
+        <option value="滋賀">滋賀</option>
+        <option value="三重">三重</option>
+        <option value="京都">京都</option>
+        <option value="奈良">奈良</option>
+        <option value="兵庫">兵庫</option>
+        <option value="大阪">大阪</option>
+        <option value="和歌山">和歌山</option>
       </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>中国・四国</option>
-        <option value="41">東京</option>
-        <option value="42">神奈川</option>
-        <option value="43">埼玉</option>
-        <option value="44">千葉</option>
-        <option value="45">栃木</option>
-        <option value="46">茨城</option>
-        <option value="47">群馬</option>
+        <option value="鳥取">鳥取</option>
+        <option value="岡山">岡山</option>
+        <option value="島根">島根</option>
+        <option value="広島">広島</option>
+        <option value="山口">山口</option>
+        <option value="香川">香川</option>
+        <option value="徳島">徳島</option>
+        <option value="高知">高知</option>
+        <option value="愛媛">愛媛</option>
       </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>九州</option>
-        <option value="51">東京</option>
-        <option value="52">神奈川</option>
-        <option value="53">埼玉</option>
-        <option value="54">千葉</option>
-        <option value="55">栃木</option>
-        <option value="56">茨城</option>
-        <option value="57">群馬</option>
+        <option value="福岡">福岡</option>
+        <option value="大分">大分</option>
+        <option value="宮崎">宮崎</option>
+        <option value="熊本">熊本</option>
+        <option value="佐賀">佐賀</option>
+        <option value="熊本">熊本</option>
+        <option value="長崎">長崎</option>
+        <option value="鹿児島">鹿児島</option>
+        <option value="沖縄">沖縄</option>
       </select>
     </div>
 
@@ -125,7 +131,7 @@ export default {
     submit() {
       firebase
         .firestore()
-        .collection("tweets")
+        .collection(this.prefecture)
         // .doc(moment())
         .add({
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),

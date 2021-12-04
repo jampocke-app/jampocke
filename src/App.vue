@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">home投稿画面</router-link> |
-      <router-link to="/about">about閲覧画面</router-link>
+      <router-link to="/post">投稿画面</router-link> |
+      <router-link to="/check">閲覧画面</router-link> |
+      <router-link to="/confirm/1">閲覧画面1</router-link>
     </div>
     <router-view />
   </div>
@@ -18,7 +19,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 29px;
 }
 
 #nav a {
