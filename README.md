@@ -1,5 +1,5 @@
 # janpocke-app
-
+app
 ## Project setup
 ```
 npm install
