@@ -3,14 +3,13 @@
     <div id="app">
       <div class="hello-wrold">
         <div class="hello-wrold__message">
-          <span class="a"><b>ジ</b></span>
-          <span class="b"><b>ャ</b></span>
-          <span class="c"><b>ン</b></span>
-          <span class="d"><b>ポ</b></span>
-          <span class="e"><b>ケ</b></span>
-          <span class="f"><b>ガ</b></span>
-          <span class="g"><b>チ</b></span>
-          <span class="h"><b>ャ</b></span>
+          <span class="a"><b>ほ</b></span>
+          <span class="b"><b>う</b></span>
+          <span class="c"><b>げ</b></span>
+          <span class="d"><b>ん</b></span>
+          <span class="e"><b>ガ</b></span>
+          <span class="f"><b>チ</b></span>
+          <span class="g"><b>ャ</b></span>
         </div>
       </div>
     </div>
@@ -170,9 +169,5 @@ export default {
 
 .g {
   color: rgb(15, 196, 241);
-}
-
-.h {
-  color: yellow;
 }
 </style>
