@@ -1,28 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="app">
+    <button v-on:click="addcomment">コメント</button>
+    <div>
+      <p v-for="comment in comments" :key="comment.id">
+        {{ comment.text }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue"
+import firebase from "firebase"
 
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      comments: [],
+    }
+  },
+  methods: {
+    addcomment() {
+      const comment = {
+        text: "こんにちは",
+      }
+      firebase
+        .firestore()
+        .collection("comments")
+        .add(comment)
+        .then((ref) => {
+          this.tweets.push({
+            id: ref.id,
+            ...comment,
+          })
+        })
+    },
+  },
+  created() {
+    firebase
+      .firestore()
+      .collection("comments")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          this.comments.push({
+            id: doc.id,
+            ...doc.data(),
+          })
+        })
+      })
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
