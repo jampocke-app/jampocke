@@ -1,7 +1,9 @@
 <template>
   <div class="app">
-    <button v-on:click="addcomment">コメント</button>
+    <button v-on:click="addComment">コメント</button>
     <div>
+      <input type="text" v-model="inputComment" />
+
       <p v-for="comment in comments" :key="comment.id">
         {{ comment.text }}
       </p>
@@ -15,13 +17,14 @@ import firebase from "firebase"
 export default {
   data() {
     return {
+      inputComment: "",
       comments: [],
     }
   },
   methods: {
-    addcomment() {
+    addComment() {
       const comment = {
-        text: "こんにちは",
+        text: this.inputComment,
       }
       firebase
         .firestore()
