@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Header />
     <h1>投稿画面</h1>
     <div>
       <h5>ユーザーネーム</h5>
@@ -15,16 +16,6 @@
     </div>
     <div>
       <h5>都道府県選択</h5>
-      <select v-model="prefecture">
-        <option value="0" disabled>関東</option>
-        <option value="東京">東京</option>
-        <option value="神奈川">神奈川</option>
-        <option value="埼玉">埼玉</option>
-        <option value="千葉">千葉</option>
-        <option value="栃木">栃木</option>
-        <option value="茨城">茨城</option>
-        <option value="群馬">群馬</option>
-      </select>
 
       <select v-model="prefecture">
         <option value="0" disabled>北海道・東北</option>
@@ -35,6 +26,17 @@
         <option value="宮城">宮城</option>
         <option value="山形">山形</option>
         <option value="福島">福島</option>
+      </select>
+
+      <select v-model="prefecture">
+        <option value="0" disabled>関東</option>
+        <option value="東京">東京</option>
+        <option value="神奈川">神奈川</option>
+        <option value="埼玉">埼玉</option>
+        <option value="千葉">千葉</option>
+        <option value="栃木">栃木</option>
+        <option value="茨城">茨城</option>
+        <option value="群馬">群馬</option>
       </select>
 
       <select v-model="prefecture">
@@ -113,9 +115,10 @@
 <script>
 // @ is an alias to /src
 import firebase from "firebase"
+import Header from "@/components/Header.vue"
 
 export default {
-  name: "Home",
+  name: "japan",
 
   data() {
     return {
@@ -144,6 +147,9 @@ export default {
         })
       //   console.log(moment())
     },
+  },
+  components: {
+    Header,
   },
 }
 </script>

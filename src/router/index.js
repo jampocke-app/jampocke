@@ -4,6 +4,7 @@ import Japan from "../views/Japan.vue"
 import Show from "../views/Show.vue"
 import Post from "../views/Post.vue"
 import Check from "../views/Check.vue"
+import randam from "../views/randam.vue"
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,11 @@ const routes = [
     path: "/check",
     name: "Check",
     component: Check,
+  },
+  {
+    path: "/randam",
+    name: "randam",
+    component: randam,
   },
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <Header />
-    {{ this.$route.params.id }}
+    <div class="title">{{ this.$route.params.id }}</div>
     <h1>閲覧画面</h1>
     <div id="app">
       <!-- 過去の投稿を閲覧する画面 -->
@@ -40,6 +40,7 @@
 
 <script>
 import firebase from "firebase"
+import Header from "@/components/Header.vue"
 
 export default {
   data() {
@@ -76,12 +77,31 @@ export default {
       })
     },
   },
+  components: {
+    Header,
+  },
 }
 </script>
 
 <style scoped>
 body {
   background-color: #fdb86d;
+}
+
+/* .about {
+  padding-top: 100px;
+} */
+.title {
+  position: relative;
+  background: #eff4ff;
+  margin-top: 20px;
+  margin-left: 43%;
+  margin-right: 43%;
+  padding: 2px 20px 2px 20px;
+  font-size: 25px;
+  color: #474747;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
 .check__container {

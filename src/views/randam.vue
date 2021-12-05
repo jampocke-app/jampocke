@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .tytle {
   justify-content: space-around;
   text-align: center;

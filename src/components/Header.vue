@@ -10,7 +10,8 @@
         <nav class="area_nav_header">
           <ul class="list_nav_header">
             <li><a href="/">マイページ</a></li>
-            <li><a href="/">ガチャ</a></li>
+            <li><router-link to="/randam">ガチャ</router-link></li>
+            <li><router-link to="/post">新規投稿</router-link></li>
             <li><a href="/">ログアウト</a></li>
           </ul>
         </nav>
@@ -124,10 +125,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  padding: 80px;
-}
-
 .container {
   max-width: 1200px;
   padding: 0 40px;
@@ -172,15 +169,13 @@ body {
   border-left: blanchedalmond;
 }
 
-.header .header2 {
+.header2 {
   font-weight: bold;
-  width: 99%;
+  width: 100%;
   height: 50px;
   background: rgb(231, 204, 204);
   box-sizing: border-box;
-  position: fixed;
-  top: 68px;
-  margin-left: 8px;
+  position: relative;
   left: 0;
   display: flex;
   align-items: center;
@@ -206,7 +201,6 @@ select {
   height: 30px;
   width: 100px;
   display: flex;
-  position: relative;
 }
 
 option[selected][disabled] {
@@ -215,22 +209,22 @@ option[selected][disabled] {
 .hokkai {
   position: absolute;
   top: 10px;
-  right: 61%;
+  right: 57%;
 }
 .tohoku {
   position: absolute;
   top: 10px;
-  right: 53%;
+  right: 50%;
 }
 .kanto {
   position: absolute;
   top: 10px;
-  right: 45%;
+  right: 43%;
 }
 .tyubu {
   position: absolute;
   top: 10px;
-  right: 37%;
+  right: 36%;
 }
 .kinki {
   position: absolute;
@@ -240,16 +234,16 @@ option[selected][disabled] {
 .tyugoku {
   position: absolute;
   top: 10px;
-  right: 21%;
+  right: 22%;
 }
 .sikoku {
   position: absolute;
   top: 10px;
-  right: 13%;
+  right: 15%;
 }
 .kyusyu {
   position: absolute;
   top: 10px;
-  right: 5%;
+  right: 8%;
 }
 </style>
