@@ -131,8 +131,11 @@ export default {
   margin: 0 auto;
 }
 .header_1 {
-  color: aqua;
-  background: black;
+  background: rgb(208, 240, 211);
+}
+
+ul {
+  list-style: none;
 }
 
 .header_1 > .container {
@@ -146,7 +149,7 @@ export default {
 }
 
 .area_logo_header .logo img {
-  height: 25px;
+  height: 40px;
   vertical-align: bottom;
 }
 
@@ -164,7 +167,7 @@ export default {
 }
 
 .list_nav_header a {
-  color: #fff;
+  color: rgb(80, 80, 80);
   font: 500 15px/1em "noto sans japanese", sans-serif;
   border-left: blanchedalmond;
 }
@@ -173,7 +176,7 @@ export default {
   font-weight: bold;
   width: 100%;
   height: 50px;
-  background: rgb(231, 204, 204);
+  background: rgb(148, 204, 157);
   box-sizing: border-box;
   position: relative;
   left: 0;
@@ -195,7 +198,7 @@ export default {
 select {
   border: none;
   border-radius: 5px;
-  color: #333;
+  color: rgb(109, 108, 108);
   font-size: 14px;
   padding: 0 10px;
   height: 30px;
