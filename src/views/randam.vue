@@ -1,19 +1,14 @@
 <template>
   <div class="over">
+    <Header />
     <div id="app">
       <div class="hello-wrold">
-        <div class="hello-wrold__message">
-          <span class="a"><b>ほ</b></span>
-          <span class="b"><b>う</b></span>
-          <span class="c"><b>げ</b></span>
-          <span class="d"><b>ん</b></span>
-          <span class="f"><b>ガ</b></span>
-          <span class="g"><b>チ</b></span>
-          <span class="h"><b>ャ</b></span>
+        <div class="logo">
+          <img src="../assets/gacha_logo.png" />
         </div>
       </div>
     </div>
-    <button v-on:click="open()" class="tytle">♻︎</button>
+    <button v-on:click="open()" class="tytle">♻</button>
     <div class="result">
       <b>{{ components[randoms] }}</b>
     </div>
@@ -21,6 +16,8 @@
 </template>
 
 <script>
+import Header from "@/components/Header.vue"
+
 export default {
   data() {
     return {
@@ -81,18 +78,27 @@ export default {
       this.randoms = 0 + Math.floor(Math.random() * 47)
     },
   },
+  components: {
+    Header,
+  },
 }
 </script>
 
 <style scoped>
+.logo {
+  background: #eef8ff;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-top: 10px;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
 .tytle {
-  justify-content: space-around;
   text-align: center;
   align-items: center;
-  position: relative;
+  margin-top: 20px;
   font-size: 100px;
-  top: 50px;
-  left: 550px;
   border-radius: 50%;
   background: skyblue;
   display: inline-block;
@@ -108,15 +114,13 @@ export default {
   text-align: center;
   align-items: center;
   position: relative;
-  left: 470px;
-  top: 100px;
   font-size: 50px;
-  height: 200px;
-  width: 300px;
+  margin-left: 36%;
+  margin-right: 36%;
+  margin-top: 5%;
   color: brown;
   background-color: rgba(203, 236, 12, 0.555);
   border-radius: 10px 0 10px 0;
-  align-items: center;
   display: flex;
   flex-direction: column;
   animation-name: fadeInAnime;
@@ -173,53 +177,9 @@ export default {
   animation-direction: normal;
 }
 
-.hello-wrold {
-  margin-top: 5spx;
-  text-align: center;
-}
-
-.hello-wrold .hello-wrold__message {
-  color: #4128ce;
-  font-size: 50px;
-  animation: rotate-anime 2s ease-in-out 1;
-  background-color: wheat;
-}
-
 @keyframes rotate-anime {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.a {
-  color: red;
-}
-
-.b {
-  color: green;
-}
-
-.c {
-  color: rgb(15, 196, 241);
-}
-
-.d {
-  color: yellow;
-}
-
-.e {
-  color: red;
-}
-
-.f {
-  color: green;
-}
-
-.g {
-  color: rgb(15, 196, 241);
-}
-
-.h {
-  color: yellow;
 }
 </style>
