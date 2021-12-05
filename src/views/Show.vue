@@ -88,9 +88,6 @@ body {
   background-color: #fdb86d;
 }
 
-/* .about {
-  padding-top: 100px;
-} */
 .title {
   position: relative;
   background: #eff4ff;

@@ -10,9 +10,9 @@
         <nav class="area_nav_header">
           <ul class="list_nav_header">
             <li><router-link to="/">マイページ</router-link></li>
-            <li><router-link to="/randam">ガチャ</router-link></li>
-            <li><router-link to="/post">新規投稿</router-link></li>
-            <li><router-link to="/">ログアウト</router-link></li>
+            <li><router-link to="/Randam">ガチャ</router-link></li>
+            <li><router-link to="/Post">新規投稿</router-link></li>
+            <li><button @click="logout">ログアウト</button></li>
           </ul>
         </nav>
       </div>
@@ -111,6 +111,8 @@
 </template>
 
 <script>
+import firebase from "firebase"
+
 export default {
   data: function () {
     return { selected: "" }
@@ -119,6 +121,9 @@ export default {
     gotopage(event) {
       console.log(event)
       this.$router.push("/Show/" + this.selected)
+    },
+    logout: function () {
+      firebase.auth().signOut()
     },
   },
 }
