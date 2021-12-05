@@ -9,7 +9,7 @@
         </div>
         <nav class="area_nav_header">
           <ul class="list_nav_header">
-            <li><router-link to="/">マイページ</router-link></li>
+            <li><router-link to="/">都道府県選択</router-link></li>
             <li><router-link to="/Randam">ガチャ</router-link></li>
             <li><router-link to="/Post">新規投稿</router-link></li>
             <li><button @click="logout">ログアウト</button></li>
