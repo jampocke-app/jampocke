@@ -3,8 +3,8 @@
     <header class="header_1">
       <div class="container">
         <div class="area_logo_header">
-          <a class="logo" href="/">
-            <img src="../assets/logo.png" />
+          <a class="logo">
+            <router-link to="/"><img src="../assets/logo.png" /></router-link>
           </a>
         </div>
         <nav class="area_nav_header">
