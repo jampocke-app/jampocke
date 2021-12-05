@@ -9,10 +9,10 @@
         </div>
         <nav class="area_nav_header">
           <ul class="list_nav_header">
-            <li><a href="/">マイページ</a></li>
+            <li><router-link to="/">マイページ</router-link></li>
             <li><router-link to="/randam">ガチャ</router-link></li>
             <li><router-link to="/post">新規投稿</router-link></li>
-            <li><a href="/">ログアウト</a></li>
+            <li><router-link to="/">ログアウト</router-link></li>
           </ul>
         </nav>
       </div>
