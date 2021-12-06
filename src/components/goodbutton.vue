@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="goodbutton">いいね機能</div>
-    <button v-on:click="good">いいね👍</button>
-    <p v-for="good in goods" :key="good.id">
-      {{ good.text }}
+    <div class="goodbutton"></div>
+    <button v-on:click="goodButton">いいね👍</button>
+    {{ good }}
+    <p v-for="count in counts" :key="count.id">
+    {{ counts }}
     </p>
   </div>
 </template>
@@ -14,40 +15,37 @@ import firebase from "firebase"
 export default {
   data() {
     return {
-      goods: [],
+      good: "💛",
+      count:0,
+      counts:[],
     }
   },
   methods: {
-    good() {
-      const good = {
-        text: "💛",
-      }
-      firebase
-        .firestore()
-        .collection("goods")
-        .add(good)
-        .then((ref) => {
-          this.comments.push({
-            id: ref.id,
-            ...good,
-          })
-        })
+    goodButton() {
+      this.count++
     },
-  },
-
-  created() {
+    firebase.firestore().collection("counts")
+        .add(count)
+        .then(ref => {
+          this.counts.push({
+            id: ref.id,
+            ...count
+          });
+        }),
+    },
+created() {
     firebase
       .firestore()
-      .collection("goods")
+      .collection("counts")
       .get()
-      .then((snapshot) => {
-        snapshot.docs.forEach((doc) => {
-          this.goods.push({
+      .then(snapshot => {
+        snapshot.docs.forEach(doc => {
+          this.counts.push({
             id: doc.id,
-            ...doc.data(),
-          })
-        })
-      })
-  },
-}
+            ...doc.data()
+          });
+        });
+      });
+  }
+  };
 </script>
