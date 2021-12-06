@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="background: url(backgroundimg)">
+  <div class="about" :style="{ background: url(bgimg) }">
     <Header />
     <header>a</header>
     {{ this.$route.params.id }}
@@ -108,9 +108,9 @@ header {
   background-size: cover;
   background-position: center;
 }
-.bg-img {
+/* .bg-img {
   background-image: url("~@/assets/北海道.jpg");
-}
+} */
 /* .bar {
   padding-top: 300px;
 } */
