@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/post">投稿画面</router-link> |
-      <router-link to="/check">閲覧画面</router-link> |
+      <div>
+        <router-link to="/post">投稿画面</router-link> |
+        <router-link to="/check">閲覧画面</router-link> |
+        <router-link to="/random">ガチャ画面</router-link>
+      </div>
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
@@ -18,7 +21,7 @@
 }
 
 #nav {
-  padding: 29px;
+  padding: 0px;
 }
 
 #nav a {

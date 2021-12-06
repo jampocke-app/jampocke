@@ -1,18 +1,26 @@
 <template>
-  <div class="about">
+  <div class="about" style="background: url(backgroundimg)">
     <Header />
+    <header>a</header>
     {{ this.$route.params.id }}
-    <h1>閲覧画面</h1>
-    <div id="app">
+
+    <div class="bar">
+      <div class="fixed-bg bg-img"></div>
       <!-- 過去の投稿を閲覧する画面 -->
       <div class="check__container">
         <div class="check__title">過去の投稿</div>
-        <div class="check__content" v-for="tweet in resultKey" :key="tweet.id">
+        <div
+          class="check__content"
+          v-for="tweet in resultKey"
+          :key="tweet.id"
+          @mouseenter="CheckShow"
+          @mouseleave="Checkhide"
+        >
           <div class="check__card">
             <p>ユーザーネーム</p>
             <div>{{ tweet.UserName }}</div>
           </div>
-          <div class="check__card">
+          <div class="check__card" v-show="showText">
             <p>年齢</p>
             <div>{{ tweet.old }}</div>
           </div>
@@ -20,15 +28,11 @@
             <p>方言</p>
             <div>{{ tweet.slang }}</div>
           </div>
-          <div class="check__card">
-            <p>都道府県</p>
-            <div>{{ tweet.prefecture }}</div>
-          </div>
-          <div class="check__card">
+          <div class="check__card" v-show="showText">
             <p>エピソード</p>
             <div>{{ tweet.episode }}</div>
           </div>
-          <div class="check__card">
+          <div class="check__card" v-show="showText">
             <p>感想</p>
             <div>{{ tweet.thoughts }}</div>
           </div>
@@ -46,9 +50,18 @@ export default {
     return {
       InputValue: "",
       tweets: [],
+      showText: false,
+      bgimg: "~@/assets/" + this.$route.params.id + ".jpg",
     }
   },
-
+  methods: {
+    CheckShow() {
+      this.showText = !this.showText
+    },
+    Checkhide() {
+      this.showText = !this.showText
+    },
+  },
   created() {
     firebase
       .firestore()
@@ -79,14 +92,33 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 body {
-  background-color: #fdb86d;
 }
-
+header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+.fixed-bg {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.bg-img {
+  background-image: url("~@/assets/北海道.jpg");
+}
+/* .bar {
+  padding-top: 300px;
+} */
 .check__container {
   border: 3px solid black;
   border-radius: 10px;
+  background-color: none;
+  position: relative;
 }
 .check__content {
   padding: 20px;
@@ -101,5 +133,11 @@ body {
   background-color: #fff8dc;
   margin: 5px;
   border-radius: 10px;
+}
+.a__hide {
+  display: block;
+}
+.a__show {
+  display: none;
 }
 </style>
