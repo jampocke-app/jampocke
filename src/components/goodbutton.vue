@@ -2,23 +2,52 @@
   <div>
     <div class="goodbutton">いいね機能</div>
     <button v-on:click="good">いいね👍</button>
-    <div v-if="hyouji">💛</div>
+    <p v-for="good in goods" :key="good.id">
+      {{ good.text }}
+    </p>
   </div>
 </template>
 
 <script>
+import firebase from "firebase"
+
 export default {
   data() {
     return {
-      hyouji: false,
+      goods: [],
     }
   },
   methods: {
     good() {
-      this.hyouji = true
+      const good = {
+        text: "💛",
+      }
+      firebase
+        .firestore()
+        .collection("goods")
+        .add(good)
+        .then((ref) => {
+          this.comments.push({
+            id: ref.id,
+            ...good,
+          })
+        })
     },
+  },
+
+  created() {
+    firebase
+      .firestore()
+      .collection("goods")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          this.goods.push({
+            id: doc.id,
+            ...doc.data(),
+          })
+        })
+      })
   },
 }
 </script>
-
-<style></style>
