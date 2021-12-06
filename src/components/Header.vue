@@ -12,7 +12,9 @@
             <li><router-link to="/">都道府県選択</router-link></li>
             <li><router-link to="/Randam">ガチャ</router-link></li>
             <li><router-link to="/Post">新規投稿</router-link></li>
-            <li><button @click="logout">ログアウト</button></li>
+            <li>
+              <button @click="logout" class="logout_button">ログアウト</button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -141,6 +143,16 @@ export default {
 
 ul {
   list-style: none;
+}
+
+.logout_button {
+  border: 6px inset #faa9a6;
+  background: rgb(253, 192, 205);
+}
+
+.logout_button:hover {
+  color: #fff;
+  background: #f50000;
 }
 
 .header_1 > .container {

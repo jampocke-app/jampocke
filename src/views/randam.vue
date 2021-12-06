@@ -10,7 +10,7 @@
     </div>
     <button v-on:click="open()" class="tytle">♻</button>
     <div class="result">
-      <b>{{ components[randoms] }}</b>
+      <b v-on:click="gopage()">{{ components[randoms] }}</b>
     </div>
   </div>
 </template>
@@ -76,6 +76,9 @@ export default {
   methods: {
     open() {
       this.randoms = 0 + Math.floor(Math.random() * 47)
+    },
+    gopage() {
+      this.$router.push("/Show/" + this.open)
     },
   },
   components: {
