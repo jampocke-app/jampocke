@@ -3,37 +3,52 @@
     <!-- <Header /> -->
     <!-- <header>a</header> -->
     {{ this.$route.params.id }}
-    <div class="fixed-bg bg"><img :src="bgimg" class="fixed-bg" /></div>
+    <div class="fixed-bg"><img :src="bgimg" class="fixed-bg" /></div>
 
     <!-- 過去の投稿を閲覧する画面 -->
     <div class="check__container">
-      <div class="check__title">過去の投稿</div>
+      <div class="check__title">Scroll</div>
+
+      <!-- ここから１投稿分 -->
       <div
         class="check__content"
-        v-for="tweet in resultKey"
+        v-for="(tweet, index) in resultKey"
         :key="tweet.id"
-        @mouseenter="CheckShow"
-        @mouseleave="Checkhide"
+        @mouseenter="CheckShow(index)"
+        @mouseleave="Checkhide(index)"
       >
+        <!-- ユーザーネーム -->
+        <div class="nameoldslang__flex">
+          <div class="check__card">
+            <div class="name__font">{{ tweet.UserName }}</div>
+          </div>
+
+          <!-- 方言 -->
+          <div class="check__card slangbutton">
+            {{ tweet.slang }}
+          </div>
+
+          <!-- 年齢 -->
+          <div class="check__card" v-show="hoverFlag && index === hoverIndex">
+            <div>{{ tweet.old }}歳</div>
+          </div>
+        </div>
+
+        <!-- エピソード -->
         <div class="check__card">
-          <p>ユーザーネーム</p>
-          <div>{{ tweet.UserName }}</div>
+          <div class="episode__font">{{ tweet.episode }}</div>
         </div>
-        <div class="check__card" v-show="showText">
-          <p>年齢</p>
-          <div>{{ tweet.old }}</div>
-        </div>
+
+        <!-- 感想 -->
         <div class="check__card">
-          <p>方言</p>
-          <div>{{ tweet.slang }}</div>
-        </div>
-        <div class="check__card" v-show="showText">
-          <p>エピソード</p>
-          <div>{{ tweet.episode }}</div>
-        </div>
-        <div class="check__card" v-show="showText">
-          <p>感想</p>
-          <div>{{ tweet.thoughts }}</div>
+          <div class="thoughts__title">感想</div>
+          <div
+            v-show="hoverFlag && index === hoverIndex"
+            class="thoughts__font"
+          >
+            {{ tweet.thoughts }}
+          </div>
+          <!-- １投稿分終了 -->
         </div>
       </div>
     </div>
@@ -46,20 +61,25 @@ import firebase from "firebase"
 export default {
   data() {
     return {
-      InputValue: "",
       tweets: [],
-      showText: false,
       bgimg: require("@/assets/" + this.$route.params.id + ".jpg"),
+      hoverFlag: false,
+      hoverIndex: null,
     }
   },
+
+  // 触れたら投稿の全てが見れる
   methods: {
-    CheckShow() {
-      this.showText = !this.showText
+    CheckShow(index) {
+      this.hoverFlag = true
+      this.hoverIndex = index
     },
     Checkhide() {
-      this.showText = !this.showText
+      this.hoverFlag = false
     },
   },
+
+  // 過去の投稿を閲覧できる
   created() {
     firebase
       .firestore()
@@ -80,6 +100,8 @@ export default {
         })
       })
   },
+
+  // 選んだ投稿分のみ表示される
   computed: {
     resultKey() {
       return this.tweets.filter((tweet) => {
@@ -91,43 +113,122 @@ export default {
 </script>
 
 <style>
-/* header {
-  top: 0;
-  position: fixed;
-  width: 100%;
-  height: 50px;
-  background-color: white;
-} */
-
+/* 背景画像について */
 .fixed-bg {
-  /* min-height: 100vh; */
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 0;
   left: 0;
   padding: 0;
+  height: 100%;
 }
+
+/* 投稿を格納する場所について */
 .check__container {
-  border: 3px solid black;
-  border-radius: 10px;
   margin-top: 80vh;
-  z-index: 200;
+  z-index: 10;
   position: relative;
+  background-color: #330066;
+  bottom: 0;
+  padding-bottom: 100px;
 }
-.check__content {
-  padding: 20px;
-}
+
+/* Scroll文字について */
 .check__title {
-  padding: 20px;
-  background-color: #ffdddd;
+  padding: 20px 20px 50px 20px;
+  color: white;
   border-radius: 10px;
+  font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3",
+    "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 }
-.check__card {
+
+/* １投稿分について */
+.check__content {
+  margin: 20px 50px;
+  background-color: #165e83;
   padding: 10px;
-  background-color: #fff8dc;
-  margin: 5px;
-  border-radius: 10px;
 }
+
+/* 名前方言年齢を格納する所について */
+.nameoldslang__flex {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* 名前方言年齢を格納する所を触れると傍線が出る */
+.nameoldslang__flex::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: all 0.3s ease 0s;
+}
+.nameoldslang__flex:hover {
+  cursor: pointer;
+}
+.nameoldslang__flex:hover::after {
+  width: 100%;
+}
+
+/* １つの投稿の各情報を入れるタグについて */
+.check__card {
+  color: white;
+}
+
+/* ユーザーネームを入れるとこについて */
+.name__font {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+    "Meiryo", sans-serif;
+  margin-left: 0.5em;
+  margin-right: 1.5em;
+  float: left;
+}
+
+/* エピソードを入れるところについて */
+.episode__font {
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",
+    sans-serif;
+  padding: 20px 0;
+}
+
+/* 感想を入れるところについて */
+.thoughts__font {
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",
+    sans-serif;
+  padding: 20px 0;
+}
+
+/* 「感想」の文字について */
+.thoughts__title {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+    "Meiryo", sans-serif;
+  margin-top: 2em;
+  margin-left: 5.5em;
+  text-align: left;
+  color: #cccccc;
+}
+
+/* 方言をボタン風にするところについて */
+.slangbutton {
+  padding: 3px;
+  border-top: 2px #c1ab05 solid;
+  border-left: 1px #c1ab05 solid;
+  border-right: 1px black solid;
+  border-bottom: 2px black solid;
+  margin-right: 1.5em;
+  font-family: Hiragino Mincho ProN、ヒラギノ明朝 ProN、Hiragino Mincho
+    Pro、ヒラギノ明朝 Pro;
+}
+
+/* 年齢や感想が見えないようにするやつ */
 .a__hide {
   display: block;
 }
