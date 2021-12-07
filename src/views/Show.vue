@@ -3,7 +3,7 @@
     <!-- <Header /> -->
     <!-- <header>a</header> -->
     {{ this.$route.params.id }}
-    <div class="fixed-bg"><img :src="bgimg" class="fixed-bg" /></div>
+    <div class="fixed-bg"><img :src="bgimg" /></div>
 
     <!-- 過去の投稿を閲覧する画面 -->
     <div class="check__container">
@@ -115,12 +115,15 @@ export default {
 <style>
 /* 背景画像について */
 .fixed-bg {
-  width: 100%;
+  width: auto;
   position: fixed;
   z-index: 0;
   left: 0;
+  right: 0;
   padding: 0;
   height: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* 投稿を格納する場所について */
