@@ -3,7 +3,7 @@
     <!-- <Header /> -->
     <!-- <header>a</header> -->
     {{ this.$route.params.id }}
-    <div class="fixed-bg"><img :src="bgimg" /></div>
+    <div class="img"><img :src="bgimg" class="fixed-bg" /></div>
 
     <!-- 過去の投稿を閲覧する画面 -->
     <div class="check__container">
@@ -113,22 +113,30 @@ export default {
 </script>
 
 <style>
-/* 背景画像について */
-.fixed-bg {
-  width: auto;
-  position: fixed;
-  z-index: 0;
-  left: 0;
-  right: 0;
+* {
+  margin: 0;
   padding: 0;
-  height: 100%;
-  text-align: center;
-  margin: 0 auto;
+}
+
+/* 背景画像について */
+.img {
+  position: relative;
+  height: 100vh;
+}
+.img img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: inherit;
 }
 
 /* 投稿を格納する場所について */
 .check__container {
-  margin-top: 80vh;
+  margin-top: -20vh;
   z-index: 10;
   position: relative;
   background-color: #330066;
