@@ -4,15 +4,20 @@
     <h1>投稿画面</h1>
     <div>
       <h5>ユーザーネーム</h5>
-      <input type="text" class="UserName" v-model="UserName" />
+      <input
+        type="text"
+        class="UserName"
+        v-model="UserName"
+        placeholder="方言 太郎"
+      />
     </div>
     <div>
       <h5>年齢</h5>
-      <input type="number" class="old" v-model="old" />
+      <input type="number" class="old" v-model="old" placeholder="半角数字" />
     </div>
     <div>
       <h5>方言</h5>
-      <input type="text" class="slang" v-model="slang" />
+      <input type="text" class="slang" v-model="slang" placeholder="関西弁" />
     </div>
     <div>
       <h5>都道府県選択</h5>
@@ -96,6 +101,7 @@
         cols="30"
         rows="10"
         v-model="episode"
+        placeholder=""
       ></textarea>
     </div>
     <div>

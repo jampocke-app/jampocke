@@ -135,6 +135,9 @@ export default {
 </script>
 
 <style scoped>
+/* header{
+    z-index: 100;
+} */
 .container {
   max-width: 1200px;
   padding: 0 40px;
@@ -199,6 +202,7 @@ ul {
   background: rgb(148, 204, 157);
   box-sizing: border-box;
   position: relative;
+  /* z-index: 100; */
   left: 0;
   display: flex;
   align-items: center;
