@@ -43,7 +43,7 @@ export default {
 }
 
 .googleLogin {
-  border: 6px inset #dadffc;
+  border: 6px inset #dafafc;
   background: rgb(192, 239, 253);
 }
 
@@ -53,7 +53,7 @@ export default {
 }
 
 .gotojapan {
-  border: 6px inset #a9faa6;
+  border: 6px inset #d0face;
   background: rgb(206, 253, 192);
 }
 
