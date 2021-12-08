@@ -2,7 +2,7 @@
   <div class="about">
     <!-- <Header /> -->
     <!-- <header>a</header> -->
-    {{ this.$route.params.id }}
+    <div class="pre__name">{{ this.$route.params.id }}</div>
     <div class="img"><img :src="bgimg" class="fixed-bg" /></div>
 
     <!-- 過去の投稿を閲覧する画面 -->
@@ -135,10 +135,25 @@ export default {
   max-height: 100%;
   max-width: inherit;
 }
+/* 都道府県名のついて */
+.pre__name {
+  z-index: 100;
+  color: black;
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  left: 3vw;
+  top: 6vh;
+  font-size: 7rem;
+  font-style: italic;
+  font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3",
+    "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+  /* padding: 20vh auto auto 3vw; */
+}
 
 /* 投稿を格納する場所について */
 .check__container {
-  margin-top: -20vh;
+  margin: -20vh 5vw auto 5vw;
   z-index: 10;
   position: relative;
   background-color: #330066;
@@ -160,6 +175,7 @@ export default {
   margin: 20px 50px;
   background-color: #165e83;
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 /* 名前方言年齢を格納する所について */
