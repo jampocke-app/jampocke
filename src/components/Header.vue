@@ -3,15 +3,20 @@
     <header class="header_1">
       <div class="container">
         <div class="area_logo_header">
-          <a class="logo" href="/">
-            <img src="../assets/logo.png" />
+          <a class="logo">
+            <router-link to="/Japan"
+              ><img src="../assets/logo.png"
+            /></router-link>
           </a>
         </div>
         <nav class="area_nav_header">
           <ul class="list_nav_header">
-            <li><a href="/">マイページ</a></li>
-            <li><a href="/">ガチャ</a></li>
-            <li><a href="/">ログアウト</a></li>
+            <li><router-link to="/Japan">都道府県選択</router-link></li>
+            <li><router-link to="/Randam">ガチャ</router-link></li>
+            <li><router-link to="/Post">新規投稿</router-link></li>
+            <li>
+              <button @click="logout" class="logout_button">ログアウト</button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -110,6 +115,8 @@
 </template>
 
 <script>
+import firebase from "firebase"
+
 export default {
   data: function () {
     return { selected: "" }
@@ -119,23 +126,36 @@ export default {
       console.log(event)
       this.$router.push("/Show/" + this.selected)
     },
+    logout: function () {
+      firebase.auth().signOut()
+      this.$router.push("/")
+    },
   },
 }
 </script>
 
 <style scoped>
-body {
-  padding: 80px;
-}
-
 .container {
   max-width: 1200px;
   padding: 0 40px;
   margin: 0 auto;
 }
 .header_1 {
-  color: aqua;
-  background: black;
+  background: rgb(208, 240, 211);
+}
+
+ul {
+  list-style: none;
+}
+
+.logout_button {
+  border: 6px inset #faa9a6;
+  background: rgb(253, 192, 205);
+}
+
+.logout_button:hover {
+  color: #fff;
+  background: #f50000;
 }
 
 .header_1 > .container {
@@ -149,7 +169,7 @@ body {
 }
 
 .area_logo_header .logo img {
-  height: 25px;
+  height: 40px;
   vertical-align: bottom;
 }
 
@@ -167,20 +187,18 @@ body {
 }
 
 .list_nav_header a {
-  color: #fff;
+  color: rgb(80, 80, 80);
   font: 500 15px/1em "noto sans japanese", sans-serif;
   border-left: blanchedalmond;
 }
 
-.header .header2 {
+.header2 {
   font-weight: bold;
-  width: 99%;
+  width: 100%;
   height: 50px;
-  background: rgb(231, 204, 204);
+  background: rgb(148, 204, 157);
   box-sizing: border-box;
-  position: fixed;
-  top: 68px;
-  margin-left: 8px;
+  position: relative;
   left: 0;
   display: flex;
   align-items: center;
@@ -200,13 +218,12 @@ body {
 select {
   border: none;
   border-radius: 5px;
-  color: #333;
+  color: rgb(109, 108, 108);
   font-size: 14px;
   padding: 0 10px;
   height: 30px;
   width: 100px;
   display: flex;
-  position: relative;
 }
 
 option[selected][disabled] {
@@ -215,22 +232,22 @@ option[selected][disabled] {
 .hokkai {
   position: absolute;
   top: 10px;
-  right: 61%;
+  right: 57%;
 }
 .tohoku {
   position: absolute;
   top: 10px;
-  right: 53%;
+  right: 50%;
 }
 .kanto {
   position: absolute;
   top: 10px;
-  right: 45%;
+  right: 43%;
 }
 .tyubu {
   position: absolute;
   top: 10px;
-  right: 37%;
+  right: 36%;
 }
 .kinki {
   position: absolute;
@@ -240,16 +257,16 @@ option[selected][disabled] {
 .tyugoku {
   position: absolute;
   top: 10px;
-  right: 21%;
+  right: 22%;
 }
 .sikoku {
   position: absolute;
   top: 10px;
-  right: 13%;
+  right: 15%;
 }
 .kyusyu {
   position: absolute;
   top: 10px;
-  right: 5%;
+  right: 8%;
 }
 </style>

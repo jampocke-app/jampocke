@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <Header />
     <h1>閲覧画面</h1>
     <div id="app">
       <!-- 過去の投稿を閲覧する画面 -->
@@ -38,6 +39,7 @@
 
 <script>
 import firebase from "firebase"
+import Header from "@/components/Header.vue"
 
 export default {
   data() {
@@ -66,6 +68,9 @@ export default {
           })
         })
       })
+  },
+  components: {
+    Header,
   },
   computed: {
     resultKey() {

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <!-- <Header /> -->
+    <Header />
     <!-- <header>a</header> -->
     <div class="pre__name">{{ this.$route.params.id }}</div>
     <div class="img"><img :src="bgimg" class="fixed-bg" /></div>
@@ -59,6 +59,7 @@
 
 <script>
 import firebase from "firebase"
+import Header from "@/components/Header.vue"
 
 export default {
   data() {
@@ -111,6 +112,9 @@ export default {
       })
     },
   },
+  components: {
+    Header,
+  },
 }
 </script>
 
@@ -152,6 +156,19 @@ export default {
 }
 
 /* 投稿を格納する場所について */
+.title {
+  position: relative;
+  background: #eff4ff;
+  margin-top: 20px;
+  margin-left: 43%;
+  margin-right: 43%;
+  padding: 2px 20px 2px 20px;
+  font-size: 25px;
+  color: #474747;
+  border-radius: 10px;
+  font-weight: bold;
+}
+/* 以下同文 */
 .check__container {
   margin: -20vh 5vw auto 5vw;
   z-index: 10;
@@ -198,9 +215,11 @@ export default {
   background: white;
   transition: all 0.3s ease 0s;
 }
+/* 以下同文 */
 .nameoldslang__flex:hover {
   cursor: pointer;
 }
+/* 以下同文 */
 .nameoldslang__flex:hover::after {
   width: 100%;
 }

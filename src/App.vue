@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div>
-        <router-link to="/post">投稿画面</router-link> |
-        <router-link to="/check">閲覧画面</router-link> |
-        <router-link to="/random">ガチャ画面</router-link>
-      </div>
-      <router-view />
-    </div>
+    <router-view />
   </div>
 </template>
 
 <style>
+body {
+  background-color: #f4f7de;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -23,13 +20,22 @@
 #nav {
   padding: 0px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+h1,
+h2 {
+  font-weight: normal;
 }
 
-#nav a.router-link-exact-active {
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
   color: #42b983;
 }
 </style>

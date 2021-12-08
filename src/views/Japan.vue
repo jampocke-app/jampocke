@@ -2,14 +2,14 @@
   <div class="japan_map">
     <Header />
     <div class="japan_graph">
-      <tr>
+      <tr1>
         <div class="retu">
           <th scope="row">北海道</th>
           <router-link to="/Show/北海道" v-on:click.native="北海道;"
             ><td>北海道</td></router-link
           >
         </div>
-      </tr>
+      </tr1>
       <tr>
         <div class="retu">
           <th scope="row">東北地方</th>
@@ -200,26 +200,28 @@ export default {
 
 <style scoped>
 .japan_map {
-  /* background-image: url("../assets/jap.png");
+  background-image: url("../assets/japa.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: beige;
-  background-size: cover;
-  padding-top: 200px; */
+  background-size: 470px 500px;
+  height: 100vh;
 }
 
 .japan_graph {
-  margin-top: 130px;
+  margin: 10px 10px 10px 0;
 }
 
 .retu {
   display: flex;
+  padding: 7px;
 }
-/* td,
+
+td,
 th {
-  border: 1px solid rgb(179, 167, 167);
+  border: 1px solid rgb(30, 32, 29);
+  background-color: #91dd9754;
   height: 30px;
-  padding: 15px;
+  padding: 12px;
   font-weight: bold;
   color: rgb(41, 41, 41);
 }
@@ -227,7 +229,7 @@ th {
 td {
   width: 100px;
   vertical-align: top;
-  color: rgb(124, 124, 124);
+  color: rgb(51, 88, 65);
 }
 
 th[scope="col"] {
@@ -236,6 +238,6 @@ th[scope="col"] {
 }
 
 th[scope="row"] {
-  background-color: #d7d9f2;
-} */
+  background-color: #52db45;
+}
 </style>
