@@ -5,12 +5,18 @@ import Show from "../views/Show.vue"
 import Post from "../views/Post.vue"
 import Check from "../views/Check.vue"
 import Randam from "../views/Randam.vue"
+import Loginview from "../views/Loginview.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: "/",
+    name: "Loginview",
+    component: Loginview,
+  },
+  {
+    path: "/Japan",
     name: "Japan",
     component: Japan,
   },

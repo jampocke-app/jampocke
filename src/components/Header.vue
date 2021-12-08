@@ -4,12 +4,14 @@
       <div class="container">
         <div class="area_logo_header">
           <a class="logo">
-            <router-link to="/"><img src="../assets/logo.png" /></router-link>
+            <router-link to="/Japan"
+              ><img src="../assets/logo.png"
+            /></router-link>
           </a>
         </div>
         <nav class="area_nav_header">
           <ul class="list_nav_header">
-            <li><router-link to="/">都道府県選択</router-link></li>
+            <li><router-link to="/Japan">都道府県選択</router-link></li>
             <li><router-link to="/Randam">ガチャ</router-link></li>
             <li><router-link to="/Post">新規投稿</router-link></li>
             <li>
@@ -126,6 +128,7 @@ export default {
     },
     logout: function () {
       firebase.auth().signOut()
+      this.$router.push("/")
     },
   },
 }

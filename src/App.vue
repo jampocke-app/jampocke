@@ -1,43 +1,8 @@
 <template>
   <div id="app">
-    <Login v-if="!isLogin"></Login>
-    <router-view>
-      <Japan v-if="isLogin" :user="userData"></Japan>
-    </router-view>
+    <router-view />
   </div>
 </template>
-
-<script>
-import Login from "./components/Login.vue"
-import Japan from "./views/Japan.vue"
-import firebase from "firebase"
-
-export default {
-  name: "app",
-  data() {
-    return {
-      isLogin: false,
-      userData: null,
-    }
-  },
-  created: function () {
-    firebase.auth().onAuthStateChanged((user) => {
-      console.log(user)
-      if (user) {
-        this.isLogin = true
-        this.userData = user
-      } else {
-        this.isLogin = false
-        this.userData = null
-      }
-    })
-  },
-  components: {
-    Login: Login,
-    Japan: Japan,
-  },
-}
-</script>
 
 <style>
 body {

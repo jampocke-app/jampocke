@@ -3,9 +3,7 @@
     <Header />
     <div id="app">
       <div class="hello-wrold">
-        <div class="logo">
-          <img src="../assets/gacha_logo.png" />
-        </div>
+        <div class="logo">ほうげんガチャ</div>
       </div>
     </div>
     <button v-on:click="open()" class="tytle">♻</button>
@@ -78,7 +76,7 @@ export default {
       this.randoms = 0 + Math.floor(Math.random() * 47)
     },
     gopage() {
-      this.$router.push("/Show/" + this.open)
+      this.$router.push("/Show/" + this.components[this.randoms])
     },
   },
   components: {
@@ -89,12 +87,14 @@ export default {
 
 <style scoped>
 .logo {
-  background: #eef8ff;
+  background: #efffee;
   padding: 0.5em;
   border-radius: 0.5em;
   margin-top: 10px;
   margin-left: 40%;
   margin-right: 40%;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .tytle {
@@ -121,9 +121,9 @@ export default {
   margin-left: 36%;
   margin-right: 36%;
   margin-top: 5%;
-  color: brown;
-  background-color: rgba(203, 236, 12, 0.555);
-  border-radius: 10px 0 10px 0;
+  color: rgb(3, 32, 58);
+  background-color: rgba(64, 236, 12, 0.425);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   animation-name: fadeInAnime;
@@ -156,7 +156,7 @@ export default {
 }
 
 .over {
-  background-image: url("~@/assets/ガチャ.jpg");
+  background-image: url("~@/assets/jaa.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
