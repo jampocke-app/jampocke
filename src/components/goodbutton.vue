@@ -11,7 +11,6 @@
 
 <script>
 import firebase from "firebase"
-
 export default {
   data() {
     return {
@@ -26,11 +25,11 @@ export default {
       firebase
         .firestore()
         .collection("counts")
-        .add(count)
+        .add(this.count)
         .then((ref) => {
           this.counts.push({
             id: ref.id,
-            ...count,
+            ...this.count,
           })
         })
     },
