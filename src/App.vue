@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
+=======
+    <div id="nav">
+      <router-link to="/post">投稿画面</router-link> |
+      <router-link to="/check">閲覧画面</router-link> |
+    </div>
+>>>>>>> ef32ee828eecf0ba57e3994cfba86b1f6a72915e
     <router-view />
   </div>
 </template>
@@ -17,9 +24,14 @@ body {
   color: #2c3e50;
 }
 
+<<<<<<< HEAD
 h1,
 h2 {
   font-weight: normal;
+=======
+#nav {
+  padding: 29px;
+>>>>>>> ef32ee828eecf0ba57e3994cfba86b1f6a72915e
 }
 
 ul {
