@@ -24,7 +24,10 @@
           </div>
 
           <!-- 方言 -->
-          <div class="check__card slangbutton">
+          <div
+            class="check__card slangbutton"
+            v-show="hoverFlag && index === hoverIndex"
+          >
             {{ tweet.slang }}
           </div>
 
@@ -41,7 +44,6 @@
 
         <!-- 感想 -->
         <div class="check__card">
-          <div class="thoughts__title">感想</div>
           <div
             v-show="hoverFlag && index === hoverIndex"
             class="thoughts__font"
@@ -130,7 +132,7 @@ export default {
   width: auto;
   height: auto;
   min-width: 100%;
-  min-height: 100%;
+  max-height: 100%;
   max-width: inherit;
 }
 
@@ -196,8 +198,8 @@ export default {
 .name__font {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
     "Meiryo", sans-serif;
-  margin-left: 0.5em;
-  margin-right: 1.5em;
+  margin-left: 2em;
+  margin-right: 3em;
   float: left;
 }
 
@@ -230,10 +232,6 @@ export default {
 /* 方言をボタン風にするところについて */
 .slangbutton {
   padding: 3px;
-  border-top: 2px #c1ab05 solid;
-  border-left: 1px #c1ab05 solid;
-  border-right: 1px black solid;
-  border-bottom: 2px black solid;
   margin-right: 1.5em;
   font-family: Hiragino Mincho ProN、ヒラギノ明朝 ProN、Hiragino Mincho
     Pro、ヒラギノ明朝 Pro;
