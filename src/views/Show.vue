@@ -50,7 +50,7 @@
           >
             {{ tweet.thoughts }}
           </div>
-          <button @click="goodButton">love</button>
+          <button @click="goodButton">💛</button>
           {{ count }}
           <!-- １投稿分終了 -->
         </div>
