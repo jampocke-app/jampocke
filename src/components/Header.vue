@@ -32,7 +32,7 @@
       <div class="tohoku">
         <select v-model="selected" v-on:change="gotopage">
           <option value="" disabled selected>東北地方</option>
-          <option selected value="青森">青森県</option>
+          <option selected value="青森県">青森県</option>
           <option selected value="岩手県">岩手県</option>
           <option selected value="宮城県">宮城県</option>
           <option selected value="秋田県">秋田県</option>
@@ -135,6 +135,9 @@ export default {
 </script>
 
 <style scoped>
+/* header{
+    z-index: 100;
+} */
 .container {
   max-width: 1200px;
   padding: 0 40px;
@@ -142,6 +145,8 @@ export default {
 }
 .header_1 {
   background: rgb(208, 240, 211);
+  z-index: 200;
+  position: relative;
 }
 
 ul {
@@ -199,6 +204,7 @@ ul {
   background: rgb(148, 204, 157);
   box-sizing: border-box;
   position: relative;
+  z-index: 300;
   left: 0;
   display: flex;
   align-items: center;

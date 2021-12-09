@@ -17,8 +17,9 @@ body {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 0px;
+h1,
+h2 {
+  font-weight: normal;
 }
 h1,
 h2 {

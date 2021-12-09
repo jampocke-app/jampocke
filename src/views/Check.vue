@@ -87,6 +87,15 @@ body {
   background-color: #fdb86d;
 }
 
+/* .post__form {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 10px;
+}
+.post__title {
+  padding: 20px;
+  background-color: #ddeeff;
+} */
 .check__container {
   border: 3px solid black;
   border-radius: 10px;

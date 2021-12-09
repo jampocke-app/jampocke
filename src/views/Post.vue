@@ -6,24 +6,34 @@
       <h5>ユーザーネーム</h5>
       <input
         type="text"
-        class="UserName"
+        class="UserName__input"
         v-model="UserName"
         placeholder="方言 太郎"
       />
     </div>
     <div>
       <h5>年齢</h5>
-      <input type="number" class="old" v-model="old" placeholder="半角数字" />
+      <input
+        type="number"
+        class="old__input"
+        v-model="old"
+        placeholder="半角数字"
+      />
     </div>
     <div>
       <h5>方言</h5>
-      <input type="text" class="slang" v-model="slang" placeholder="関西弁" />
+      <input
+        type="text"
+        class="slang__input"
+        v-model="slang"
+        placeholder="関西弁"
+      />
     </div>
     <div>
       <h5>都道府県選択</h5>
 
       <select v-model="prefecture">
-        <option value="" disabled selected>北海道・東北</option>
+        <option value="0" disabled selected>北海道・東北</option>
         <option selected value="北海道">北海道</option>
         <option selected value="青森">青森県</option>
         <option selected value="岩手県">岩手県</option>
@@ -34,7 +44,7 @@
       </select>
 
       <select v-model="prefecture">
-        <option value="" disabled>関東</option>
+        <option value="0" disabled>関東</option>
         <option selected value="茨城県">茨城県</option>
         <option selected value="栃木県">栃木県</option>
         <option selected value="群馬県">群馬県</option>
@@ -45,7 +55,7 @@
       </select>
 
       <select v-model="prefecture">
-        <option value="" disabled>中部</option>
+        <option value="0" disabled>中部</option>
         <option selected value="新潟県">新潟県</option>
         <option selected value="富山県">富山県</option>
         <option selected value="石川県">石川県</option>
@@ -58,7 +68,7 @@
       </select>
 
       <select v-model="prefecture">
-        <option value="" disabled>近畿</option>
+        <option value="0" disabled>近畿</option>
         <option selected value="三重県">三重県</option>
         <option selected value="滋賀県">滋賀県</option>
         <option selected value="京都府">京都府</option>
@@ -69,7 +79,7 @@
       </select>
 
       <select v-model="prefecture">
-        <option value="" disabled>中国・四国</option>
+        <option value="0" disabled>中国・四国</option>
         <option selected value="鳥取県">鳥取県</option>
         <option selected value="島根県">島根県</option>
         <option selected value="広島県">広島県</option>
@@ -82,7 +92,7 @@
       </select>
 
       <select v-model="prefecture">
-        <option value="" disabled>九州</option>
+        <option value="0" disabled>九州</option>
         <option selected value="福岡県">福岡県</option>
         <option selected value="佐賀県">佐賀県</option>
         <option selected value="長崎県">長崎県</option>
@@ -97,20 +107,25 @@
     <div>
       <h5>エピソード</h5>
       <textarea
-        class="episode"
+        class="episode__input"
         cols="30"
         rows="10"
         v-model="episode"
-        placeholder=""
+        placeholder="せやけん言ったとおりになったやろ
+        
+  こないだ大阪に旅行行ったときに出店のおじさんが、「ホンマでっか！」って言ってた"
       ></textarea>
     </div>
     <div>
       <h5>感想</h5>
       <textarea
-        class="thoughts"
+        class="thoughts__input"
         cols="30"
         rows="10"
         v-model="thoughts"
+        placeholder="圧つよめな方言だったな
+        
+  ほんとに「ホンマでっか！」っていう人いるんだね"
       ></textarea>
     </div>
     <input type="submit" class="submit" v-on:click="submit" />
@@ -151,7 +166,13 @@ export default {
           episode: this.episode,
           thoughts: this.thoughts,
         })
-      //   console.log(moment())
+      ;(this.prefecture = ""),
+        (this.UserName = ""),
+        (this.old = ""),
+        (this.slang = ""),
+        (this.episode = ""),
+        (this.thoughts = ""),
+        (this.selected = "")
     },
   },
   components: {
@@ -161,7 +182,10 @@ export default {
 </script>
 
 <style scoped>
-.home {
+h5 {
+  padding: 1rem;
+}
+/* .home {
   text-align: center;
 }
 .episode {
@@ -169,5 +193,5 @@ export default {
 }
 .thoughts {
   display: inline-block;
-}
+} */
 </style>

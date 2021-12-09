@@ -4,7 +4,7 @@ import Japan from "../views/Japan.vue"
 import Show from "../views/Show.vue"
 import Post from "../views/Post.vue"
 import Check from "../views/Check.vue"
-import Random from "../views/Random.vue"
+import Randam from "../views/Randam.vue"
 import Loginview from "../views/Loginview.vue"
 
 Vue.use(VueRouter)
@@ -36,9 +36,9 @@ const routes = [
     component: Check,
   },
   {
-    path: "/Random",
-    name: "Random",
-    component: Random,
+    path: "/Randam",
+    name: "Randam",
+    component: Randam,
   },
 ]
 
