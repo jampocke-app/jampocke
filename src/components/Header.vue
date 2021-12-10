@@ -145,6 +145,8 @@ export default {
 }
 .header_1 {
   background: rgb(208, 240, 211);
+  z-index: 200;
+  position: relative;
 }
 
 ul {
@@ -202,7 +204,7 @@ ul {
   background: rgb(148, 204, 157);
   box-sizing: border-box;
   position: relative;
-  /* z-index: 100; */
+  z-index: 300;
   left: 0;
   display: flex;
   align-items: center;

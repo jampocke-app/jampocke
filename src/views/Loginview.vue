@@ -23,10 +23,6 @@ export default {
     go_to_Japan: function () {
       this.$router.push("/Japan")
     },
-    // logout: function () {
-    //   firebase.auth().signOut()
-    //   this.$router.push("/")
-    // },
   },
 }
 </script>

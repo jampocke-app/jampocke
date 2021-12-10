@@ -143,49 +143,37 @@ export default {
   min-width: 100%;
   max-height: 100%;
   max-width: inherit;
-  margin-top: 100px;
 }
 /* 都道府県名のついて */
 .pre__name {
   z-index: 100;
-  color: black;
-  position: absolute;
+  color: white;
+  position: fixed;
   writing-mode: vertical-rl;
   text-orientation: upright;
   left: 3vw;
-  top: 6vh;
-  font-size: 7rem;
+  top: 20vh;
+  font-size: 6.1rem;
   font-style: italic;
   font-family: "游明朝", "YuMincho", "ヒラギノ明朝 Pro W3",
     "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-  /* padding: 20vh auto auto 3vw; */
+  text-shadow: 0.3rem 0.2rem 0.1rem #000, 0.4rem 0.3rem 0 #fff;
+  /* text-shadow: 0.3rem 0.3rem 0.2rem black; */
 }
 
 /* 投稿を格納する場所について */
-.title {
-  position: relative;
-  background: #eff4ff;
-  margin-top: 20px;
-  margin-left: 43%;
-  margin-right: 43%;
-  padding: 2px 20px 2px 20px;
-  font-size: 25px;
-  color: #474747;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
 .check__container {
-  margin: -20vh 5vw auto 5vw;
-  z-index: 10;
+  margin: -30vh 5vw auto 5vw;
+  z-index: 100;
   position: relative;
-  background-color: #330066;
+  background-color: rgba(165, 190, 207, 0.75);
   bottom: 0;
   padding-bottom: 100px;
 }
 
 /* Scroll文字について */
 .check__title {
+  font-size: 1.1rem;
   padding: 20px 20px 50px 20px;
   color: white;
   border-radius: 10px;
@@ -196,7 +184,7 @@ export default {
 /* １投稿分について */
 .check__content {
   margin: 20px 50px;
-  background-color: #165e83;
+  background-color: #335495;
   padding: 10px;
   flex-wrap: wrap;
 }
@@ -221,9 +209,11 @@ export default {
   background: white;
   transition: all 0.3s ease 0s;
 }
+/* 以下同文 */
 .nameoldslang__flex:hover {
   cursor: pointer;
 }
+/* 以下同文 */
 .nameoldslang__flex:hover::after {
   width: 100%;
 }
@@ -235,8 +225,8 @@ export default {
 
 /* ユーザーネームを入れるとこについて */
 .name__font {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
-    "Meiryo", sans-serif;
+  font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN",
+    "Hiragino Mincho Pro", "ヒラギノ明朝 Pro";
   margin-left: 2em;
   margin-right: 3em;
   float: left;
@@ -258,29 +248,11 @@ export default {
   padding: 20px 0;
 }
 
-/* 「感想」の文字について */
-.thoughts__title {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
-    "Meiryo", sans-serif;
-  margin-top: 2em;
-  margin-left: 5.5em;
-  text-align: left;
-  color: #cccccc;
-}
-
 /* 方言をボタン風にするところについて */
 .slangbutton {
   padding: 3px;
   margin-right: 1.5em;
   font-family: Hiragino Mincho ProN、ヒラギノ明朝 ProN、Hiragino Mincho
     Pro、ヒラギノ明朝 Pro;
-}
-
-/* 年齢や感想が見えないようにするやつ */
-.a__hide {
-  display: block;
-}
-.a__show {
-  display: none;
 }
 </style>
