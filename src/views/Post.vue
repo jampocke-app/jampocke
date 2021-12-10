@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Header />
-    <h1>投稿画面</h1>
     <div>
       <h5>ユーザーネーム</h5>
       <input
@@ -112,7 +111,9 @@
         rows="10"
         v-model="episode"
         placeholder="せやけん言ったとおりになったやろ
-        
+
+  ：
+
   こないだ大阪に旅行行ったときに出店のおじさんが、「ホンマでっか！」って言ってた"
       ></textarea>
     </div>
@@ -124,7 +125,9 @@
         rows="10"
         v-model="thoughts"
         placeholder="圧つよめな方言だったな
-        
+
+  ：
+
   ほんとに「ホンマでっか！」っていう人いるんだね"
       ></textarea>
     </div>
@@ -166,13 +169,13 @@ export default {
           episode: this.episode,
           thoughts: this.thoughts,
         })
-      ;(this.prefecture = ""),
-        (this.UserName = ""),
-        (this.old = ""),
-        (this.slang = ""),
-        (this.episode = ""),
-        (this.thoughts = ""),
-        (this.selected = "")
+      // ;(this.prefecture = ""),
+      //   (this.UserName = ""),
+      //   (this.old = ""),
+      //   (this.slang = ""),
+      //   (this.episode = ""),
+      //   (this.thoughts = ""),
+      //   (this.selected = "")
     },
   },
   components: {
