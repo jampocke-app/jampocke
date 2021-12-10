@@ -52,7 +52,6 @@
           </div>
           <button @click="goodButton">💛</button>
           {{ count }}
-          <!-- １投稿分終了 -->
         </div>
       </div>
     </div>
