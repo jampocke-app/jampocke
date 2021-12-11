@@ -1,6 +1,9 @@
 # janpocke-app
 
-pineapple
+app
+aaaaaa
+bb
+pine
 
 ## Project setup
 

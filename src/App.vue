@@ -5,24 +5,38 @@
 </template>
 
 <style>
+body {
+  background-color: #f4f7de;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+h1,
+h2 {
+  font-weight: normal;
+}
+h1,
+h2 {
+  font-weight: normal;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-#nav a.router-link-exact-active {
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
   color: #42b983;
 }
 </style>

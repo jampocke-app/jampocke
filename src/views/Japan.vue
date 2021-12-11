@@ -2,33 +2,33 @@
   <div class="japan_map">
     <Header />
     <div class="japan_graph">
-      <tr>
+      <tr1>
         <div class="retu">
           <th scope="row">北海道</th>
-          <router-link to="/Show/Hokkaidou" v-on:click.native="Hokkaidou"
+          <router-link to="/Show/北海道" v-on:click.native="北海道;"
             ><td>北海道</td></router-link
           >
         </div>
-      </tr>
+      </tr1>
       <tr>
         <div class="retu">
           <th scope="row">東北地方</th>
-          <router-link to="/Show/Aomori" v-on:click.native="Aomori"
+          <router-link to="/Show/青森県" v-on:click.native="青森県;"
             ><td>青森県</td></router-link
           >
-          <router-link to="/Show/Iwate" v-on:click.native="Iwate"
+          <router-link to="/Show/岩手県" v-on:click.native="岩手県;"
             ><td>岩手県</td></router-link
           >
-          <router-link to="/Show/Miyagi" v-on:click.native="Miyagi"
+          <router-link to="/Show/宮城県" v-on:click.native="宮城県;"
             ><td>宮城県</td></router-link
           >
-          <router-link to="/Show/Akita" v-on:click.native="Akita"
+          <router-link to="/Show/秋田県" v-on:click.native="秋田県;"
             ><td>秋田県</td></router-link
           >
-          <router-link to="/Show/Yamagata" v-on:click.native="Yamagata"
+          <router-link to="/Show/山形県" v-on:click.native="山形県;"
             ><td>山形県</td></router-link
           >
-          <router-link to="/Show/Hukusima" v-on:click.native="Hukusima"
+          <router-link to="/Show/福島県" v-on:click.native="福島県;"
             ><td>福島県</td></router-link
           >
         </div>
@@ -36,25 +36,25 @@
       <tr>
         <div class="retu">
           <th scope="row">関東地方</th>
-          <router-link to="/Show/Ibaraki" v-on:click.native="Ibaraki"
+          <router-link to="/Show/茨城県" v-on:click.native="茨城県;"
             ><td>茨城県</td></router-link
           >
-          <router-link to="/Show/Totigi" v-on:click.native="Totigi"
+          <router-link to="/Show/栃木県" v-on:click.native="栃木県;"
             ><td>栃木県</td></router-link
           >
-          <router-link to="/Show/Gunma" v-on:click.native="Gunma"
+          <router-link to="/Show/群馬県" v-on:click.native="群馬県;"
             ><td>群馬県</td></router-link
           >
-          <router-link to="/Show/Saitama" v-on:click.native="Saitama"
+          <router-link to="/Show/埼玉県" v-on:click.native="埼玉県;"
             ><td>埼玉県</td></router-link
           >
-          <router-link to="/Show/Tiba" v-on:click.native="Tiba"
+          <router-link to="/Show/千葉県" v-on:click.native="千葉県;"
             ><td>千葉県</td></router-link
           >
-          <router-link to="/Show/Tokyo" v-on:click.native="Tokyo"
+          <router-link to="/Show/東京都" v-on:click.native="東京都;"
             ><td>東京都</td></router-link
           >
-          <router-link to="/Show/Kanagawa" v-on:click.native="Kanagawa"
+          <router-link to="/Show/神奈川県" v-on:click.native="神奈川県;"
             ><td>神奈川県</td></router-link
           >
         </div>
@@ -62,31 +62,31 @@
       <tr>
         <div class="retu">
           <th scope="row">中部地方</th>
-          <router-link to="/Show/Niigata" v-on:click.native="Niigata"
+          <router-link to="/Show/新潟県" v-on:click.native="新潟県;"
             ><td>新潟県</td></router-link
           >
-          <router-link to="/Show/Toyama" v-on:click.native="Toyama"
+          <router-link to="/Show/富山県" v-on:click.native="富山県;"
             ><td>富山県</td></router-link
           >
-          <router-link to="/Show/Isikawa" v-on:click.native="Isikawa"
+          <router-link to="/Show/石川県" v-on:click.native="石川県;"
             ><td>石川県</td></router-link
           >
-          <router-link to="/Show/Hukui" v-on:click.native="Hukui"
+          <router-link to="/Show/福井県" v-on:click.native="福井県;"
             ><td>福井県</td></router-link
           >
-          <router-link to="/Show/Yamanasi" v-on:click.native="Yamanasi"
+          <router-link to="/Show/山梨県" v-on:click.native="山梨県;"
             ><td>山梨県</td></router-link
           >
-          <router-link to="/Show/Nagano" v-on:click.native="Nagano"
+          <router-link to="/Show/長野県" v-on:click.native="長野県;"
             ><td>長野県</td></router-link
           >
-          <router-link to="/Show/Gihu" v-on:click.native="Gihu"
+          <router-link to="/Show/岐阜県" v-on:click.native="岐阜県;"
             ><td>岐阜県</td></router-link
           >
-          <router-link to="/Show/Shizuoka" v-on:click.native="Shizuoka"
+          <router-link to="/Show/静岡県" v-on:click.native="静岡県;"
             ><td>静岡県</td></router-link
           >
-          <router-link to="/Show/Aiti" v-on:click.native="Aiti"
+          <router-link to="/Show/愛知県" v-on:click.native="愛知県;"
             ><td>愛知県</td></router-link
           >
         </div>
@@ -94,25 +94,25 @@
       <tr>
         <div class="retu">
           <th scope="row">近畿地方</th>
-          <router-link to="/Show/Mie" v-on:click.native="Mie"
+          <router-link to="/Show/三重県" v-on:click.native="三重県;"
             ><td>三重県</td></router-link
           >
-          <router-link to="/Show/Mie" v-on:click.native="Mie"
+          <router-link to="/Show/滋賀県" v-on:click.native="滋賀県;"
             ><td>滋賀県</td></router-link
           >
-          <router-link to="/Show/Kyoto" v-on:click.native="Kyoto"
+          <router-link to="/Show/京都府" v-on:click.native="京都府;"
             ><td>京都府</td></router-link
           >
-          <router-link to="/Show/Osaka" v-on:click.native="Osaka"
+          <router-link to="/Show/大阪府" v-on:click.native="大阪府;"
             ><td>大阪府</td></router-link
           >
-          <router-link to="/Show/Hyogo" v-on:click.native="Hyogo"
+          <router-link to="/Show/兵庫県" v-on:click.native="兵庫県;"
             ><td>兵庫県</td></router-link
           >
-          <router-link to="/Show/Nara" v-on:click.native="Nara"
+          <router-link to="/Show/奈良県" v-on:click.native="奈良県;"
             ><td>奈良県</td></router-link
           >
-          <router-link to="/Show/Wakayama" v-on:click.native="Wakayama"
+          <router-link to="/Show/和歌山県" v-on:click.native="和歌山県;"
             ><td>和歌山県</td></router-link
           >
         </div>
@@ -120,19 +120,19 @@
       <tr>
         <div class="retu">
           <th scope="row">中国地方</th>
-          <router-link to="/Show/Tottori" v-on:click.native="Tottori"
+          <router-link to="/Show/鳥取県" v-on:click.native="鳥取県;"
             ><td>鳥取県</td></router-link
           >
-          <router-link to="/Show/Simane" v-on:click.native="Simane"
+          <router-link to="/Show/島根県" v-on:click.native="島根県;"
             ><td>島根県</td></router-link
           >
-          <router-link to="/Show/Hirosima" v-on:click.native="Hirosima"
+          <router-link to="/Show/広島県" v-on:click.native="広島県;"
             ><td>広島県</td></router-link
           >
-          <router-link to="/Show/Okayama" v-on:click.native="Okayama"
+          <router-link to="/Show/岡山県" v-on:click.native="岡山県;"
             ><td>岡山県</td></router-link
           >
-          <router-link to="/Show/Yamaguti" v-on:click.native="Yamaguti"
+          <router-link to="/Show/山口県" v-on:click.native="山口県;"
             ><td>山口県</td></router-link
           >
         </div>
@@ -140,16 +140,16 @@
       <tr>
         <div class="retu">
           <th scope="row">四国地方</th>
-          <router-link to="/Show/Tokusima" v-on:click.native="Tokusima"
+          <router-link to="/Show/徳島県" v-on:click.native="徳島県;"
             ><td>徳島県</td></router-link
           >
-          <router-link to="/Show/Kagawa" v-on:click.native="Kagawa"
+          <router-link to="/Show/香川県" v-on:click.native="香川県;"
             ><td>香川県</td></router-link
           >
-          <router-link to="/Show/Ehime" v-on:click.native="Kagawa"
+          <router-link to="/Show/愛媛県" v-on:click.native="愛媛県;"
             ><td>愛媛県</td></router-link
           >
-          <router-link to="/Show/Kouti" v-on:click.native="Kouti"
+          <router-link to="/Show/高知県" v-on:click.native="高知県;"
             ><td>高知県</td></router-link
           >
         </div>
@@ -157,28 +157,28 @@
       <tr>
         <div class="retu">
           <th scope="row">九州地方</th>
-          <router-link to="/Show/Hukuoka" v-on:click.native="Hukuoka"
+          <router-link to="/Show/福岡県" v-on:click.native="福岡県;"
             ><td>福岡県</td></router-link
           >
-          <router-link to="/Show/Saga" v-on:click.native="Saga"
+          <router-link to="/Show/佐賀県" v-on:click.native="佐賀県;"
             ><td>佐賀県</td></router-link
           >
-          <router-link to="/Show/Nagasaki" v-on:click.native="Nagasaki"
+          <router-link to="/Show/長崎県" v-on:click.native="長崎県;"
             ><td>長崎県</td></router-link
           >
-          <router-link to="/Show/Kumamoto" v-on:click.native="Kumamoto"
+          <router-link to="/Show/熊本県" v-on:click.native="熊本県;"
             ><td>熊本県</td></router-link
           >
-          <router-link to="/Show/Ooita" v-on:click.native="Ooita"
+          <router-link to="/Show/大分県" v-on:click.native="大分県;"
             ><td>大分県</td></router-link
           >
-          <router-link to="/Show/Miyazaki" v-on:click.native="Miyazaki"
+          <router-link to="/Show/宮崎県" v-on:click.native="宮崎県;"
             ><td>宮崎県</td></router-link
           >
-          <router-link to="/Show/Kagosima" v-on:click.native="Kagosima"
+          <router-link to="/Show/鹿児島県" v-on:click.native="鹿児島県;"
             ><td>鹿児島県</td></router-link
           >
-          <router-link to="/Show/Okinawa" v-on:click.native="Okinawa"
+          <router-link to="/Show/沖縄県" v-on:click.native="沖縄県;"
             ><td>沖縄県</td></router-link
           >
         </div>
@@ -200,26 +200,28 @@ export default {
 
 <style scoped>
 .japan_map {
-  /* background-image: url("../assets/jap.png");
+  background-image: url("../assets/japa.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: beige;
-  background-size: cover;
-  padding-top: 200px; */
+  background-size: 470px 500px;
+  height: 100vh;
 }
 
 .japan_graph {
-  margin-top: 130px;
+  margin: 10px 10px 10px 0;
 }
 
 .retu {
   display: flex;
+  padding: 7px;
 }
-/* td,
+
+td,
 th {
-  border: 1px solid rgb(179, 167, 167);
+  border: 1px solid rgb(30, 32, 29);
+  background-color: #91dd9754;
   height: 30px;
-  padding: 15px;
+  padding: 12px;
   font-weight: bold;
   color: rgb(41, 41, 41);
 }
@@ -227,7 +229,7 @@ th {
 td {
   width: 100px;
   vertical-align: top;
-  color: rgb(124, 124, 124);
+  color: rgb(51, 88, 65);
 }
 
 th[scope="col"] {
@@ -236,6 +238,6 @@ th[scope="col"] {
 }
 
 th[scope="row"] {
-  background-color: #d7d9f2;
-} */
+  background-color: #52db45;
+}
 </style>
