@@ -129,7 +129,7 @@ export default {
     },
     logout: function () {
       firebase.auth().signOut()
-      this.$router.push("/")
+      this.$router.push("/Loginview")
     },
   },
 }

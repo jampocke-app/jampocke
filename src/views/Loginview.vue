@@ -50,6 +50,7 @@ export default {
 
 p {
   font-size: 200%;
+  font-weight: bold;
 }
 
 .dekiru {
