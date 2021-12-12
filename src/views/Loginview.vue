@@ -1,5 +1,5 @@
 <template>
-  <div class="view">
+  <div class="view" v-if="isVisible">
     <div class="hougentabi">日本列島方言旅</div>
     <p class="dekiru">★このアプリでできること★</p>
     <p>地域のリアルな話を聞ける！</p>
@@ -22,13 +22,18 @@ import firebase from "firebase"
 
 export default {
   name: "login",
-  data() {},
+  data() {
+    return {
+      isVisible: true,
+    }
+  },
   methods: {
     googleLogin: function () {
       firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider())
     },
     go_to_Japan: function () {
       this.$router.push("/Japan")
+      this.isVisible = !this.isVisible
     },
   },
 }
