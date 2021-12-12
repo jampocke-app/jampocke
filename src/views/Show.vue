@@ -49,8 +49,9 @@
             class="thoughts__font"
           >
             {{ tweet.thoughts }}
+            <button @click="goodButton">💛</button>
           </div>
-          <button @click="goodButton">💛</button>
+
           {{ count }}
         </div>
       </div>
@@ -83,7 +84,9 @@ export default {
       this.hoverFlag = false
     },
     goodButton() {
-      this.count++
+      if (this.hoverFlag && this.index === this.hoverIndex) {
+        this.count++
+      }
     },
   },
 
