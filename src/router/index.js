@@ -4,7 +4,7 @@ import Japan from "../views/Japan.vue"
 import Show from "../views/Show.vue"
 import Post from "../views/Post.vue"
 import Check from "../views/Check.vue"
-import Randam from "../views/Randam.vue"
+import Random from "../views/Random.vue"
 import Loginview from "../views/Loginview.vue"
 
 Vue.use(VueRouter)
@@ -15,15 +15,6 @@ const routes = [
     name: "Loginview",
     component: Loginview,
   },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  // },
   {
     path: "/Japan",
     name: "Japan",
@@ -45,9 +36,9 @@ const routes = [
     component: Check,
   },
   {
-    path: "/Randam",
-    name: "Randam",
-    component: Randam,
+    path: "/Random",
+    name: "Random",
+    component: Random,
   },
 ]
 

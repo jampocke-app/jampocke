@@ -12,7 +12,7 @@
         <nav class="area_nav_header">
           <ul class="list_nav_header">
             <li><router-link to="/Japan">都道府県選択</router-link></li>
-            <li><router-link to="/Randam">ガチャ</router-link></li>
+            <li><router-link to="/Random">ガチャ</router-link></li>
             <li><router-link to="/Post">新規投稿</router-link></li>
             <li>
               <button @click="logout" class="logout_button">ログアウト</button>
@@ -125,6 +125,7 @@ export default {
     gotopage(event) {
       console.log(event)
       this.$router.push("/Show/" + this.selected)
+      this.selected = ""
     },
     logout: function () {
       firebase.auth().signOut()
@@ -145,6 +146,8 @@ export default {
 }
 .header_1 {
   background: rgb(208, 240, 211);
+  z-index: 200;
+  position: relative;
 }
 
 ul {
@@ -202,7 +205,7 @@ ul {
   background: rgb(148, 204, 157);
   box-sizing: border-box;
   position: relative;
-  /* z-index: 100; */
+  z-index: 300;
   left: 0;
   display: flex;
   align-items: center;
