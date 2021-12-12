@@ -1,9 +1,19 @@
 <template>
   <div id="app">
     <router-view />
+    <Loginview />
   </div>
 </template>
 
+<script>
+import Loginview from "@/views/Loginview.vue"
+
+export default {
+  components: {
+    Loginview,
+  },
+}
+</script>
 <style>
 body {
   background-color: #f4f7de;
